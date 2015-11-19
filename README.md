@@ -1,4 +1,4 @@
-# Defcon
+# DEFCON
 
 An open-source community of [Firehose Project](http://thefirehoseproject.com) students.
 
