@@ -14,3 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore random files that mac puts in if you use a finder.
+.DS_Store
+*.DS_Store
