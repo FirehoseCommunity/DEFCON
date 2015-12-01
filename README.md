@@ -2,7 +2,11 @@
 
 An open-source community of [Firehose Project](http://thefirehoseproject.com) students.
 
-# Contributors
+## Wireframes
+
+View the wireframes for this app [here](https://github.com/FirehoseCommunity/DEFCON/blob/master/Wireframes.md)
+
+## Contributors
 
 * Matthew Lepley
 * Ken Mazaika
