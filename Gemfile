@@ -28,7 +28,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # Include Twitter Bootstrap
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass', '3.3.5.1'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -47,3 +48,8 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'haml'
+
+gem 'devise'
+
+gem 'sprockets', '2.11.0'
+
