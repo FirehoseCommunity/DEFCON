@@ -53,3 +53,4 @@ gem 'devise'
 
 gem 'sprockets', '2.11.0'
 
+gem 'factory_girl'
