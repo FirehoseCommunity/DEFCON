@@ -1,1 +1,5 @@
-%h1 Edit your posts
+=simple_form_for @post do |f|
+	=f.input :title
+	=f.input :body
+	%br/
+	=f.submit 'Update', :class => 'btn btn-primary'
