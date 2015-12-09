@@ -13,7 +13,6 @@
       %p.alert
         = alert
     - if current_user.blank?
-      = link_to 'Sign up', new_user_registration_path
       = link_to 'Sign in', new_user_session_path
     - else
       Hello #{current_user.email}
