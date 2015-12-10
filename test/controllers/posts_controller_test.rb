@@ -14,8 +14,6 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success      
   end
 
-  # Need to troubleshoot NoMethodError
-  #
   test "make a post" do
     u = FactoryGirl.create(:user)
     sign_in u
@@ -23,7 +21,7 @@ class PostsControllerTest < ActionController::TestCase
     assert_difference 'Post.count' do
       post :create, {:post => {
         :title => 'the things',
-        :body => "do all of them"
+        :body => "do all of them",
         }
       }
     end
@@ -37,5 +35,5 @@ class PostsControllerTest < ActionController::TestCase
     get :show, id: p.id
     assert_response :success
   end
-
+  
 end
