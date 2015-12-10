@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   before_save :check_if_first_user
 
   def check_if_first_user
-    User.any? ? self.admin = false : self.admin = true
+    self.admin = !User.any?
   end
 
 end
