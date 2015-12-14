@@ -1,7 +1,19 @@
+// %h1= @posts.inspect
+
 - @posts.each do |post|
-  post.title
-  post.body
-  post.created_at
+  %div
+    %h1= post.title
+    %br/
+    %i= post.body
+    %br/
+    %p= post.created_at
+    %br/
+  %hr/
+
+// - @posts.each do |post|
+//   post.title
+//   post.body
+//   post.created_at
 
 %h1 Write a new post
 
