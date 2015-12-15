@@ -2,7 +2,6 @@
 %p @post.body
 
 .clear
-= simple_form_for @comment, :url => '#' do |f|
+= simple_form_for @comment, :url => post_comments_path(@post) do |f|
   = f.input :message
   = f.submit "Add a Comment", :class => 'btn btn-success'
-
