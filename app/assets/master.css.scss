@@ -1,11 +1,16 @@
   
-.booyah-box 
-    -moz-box-shadow: 1px 1px 2px 0 #d0d0d0
-    -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0
-    box-shadow: 1px 1px 2px 0 #d0d0d0
-    background: black 
-    border: 10px solid black
-    border-color: #e4e4e4 #bebebd #bebebd #e4e4e4
+.booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  margin-top:10px;
+  margin-bottom:15px;
+  padding:20px;
+}
 
-.clear 
-    clear: both
+.clear {
+    clear: both;
+}
