@@ -1,2 +1,8 @@
 %h1 @post.title
 %p @post.body
+
+.clear
+= simple_form_for @comment, :url => '#' do |f|
+  = f.input :message
+  = f.submit "Add a Comment", :class => 'btn btn-success'
+
