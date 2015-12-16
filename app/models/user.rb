@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   def check_if_first_user
     self.admin = !User.any?
-    true 
+    return true
   end
 
 end 
