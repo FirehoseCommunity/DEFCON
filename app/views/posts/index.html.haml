@@ -1,8 +1,3 @@
-- @posts.each do |post|
-  post.title
-  post.body
-  post.created_at
-
 %h1 Write a new post
 
 / Button trigger modal
@@ -25,3 +20,18 @@
       .modal-footer
         %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
         %button.btn.btn-primary{:type => "button"} Save changes
+        
+        
+- @posts.each do |post|
+  .booyah-box.col-xs-10.col-xs-offset-1
+    %h1= post.title
+    %i= post.body
+    %br/
+    %br/
+    %p= post.created_at
+    %br/
+        
+        
+      
+
+

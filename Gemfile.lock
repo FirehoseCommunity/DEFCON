@@ -144,7 +144,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.0.1)
-  sass-rails (~> 4.0.0)
+  sass-rails
   sdoc
   simple_form
   sprockets (= 2.11.0)

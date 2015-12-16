@@ -6,16 +6,40 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
+    %nav.navbar.navbar-inverse{:role => "navigation"}
+      .container-fluid
+        / Brand and toggle get grouped for better mobile display
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "#"} Defcon
+        / Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              %a{:href => "#"} Link
+        %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
+        - else
+          %li= link_to 'Sign in', new_user_session_path
+        %li
+          %a{:href => "#"} Link
+    / /.navbar-collapse
+    / /.container-fluid
     - if notice.present?
       %p.notice
         = notice
     - if alert.present?
       %p.alert
         = alert
-    - if current_user.blank?
-      = link_to 'Sign in', new_user_session_path
-    - else
-      Hello #{current_user.email}
-      = link_to  'Sign out', destroy_user_session_path, :method => :delete
+    // - if current_user.blank?
+    //   = link_to 'Sign in', new_user_session_path
+    // - else
+    //   Hello #{current_user.email}
+    //   = link_to  'Sign out', destroy_user_session_path, :method => :delete
     %hr
     = yield
