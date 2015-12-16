@@ -1,7 +1,34 @@
-%h1 @post.title
+%h1@post.title
 %p @post.body
-
-.clear
-= simple_form_for @comment, :url => post_comments_path(@post) do |f|
-  = f.input :message
-  = f.submit "Add a Comment", :class => 'btn btn-success'
+  
+// .booyah-box.col-xs-10.col-xs-offset-1
+//   .clear
+//   = simple_form_for @comment, :url => post_comments_path(@post) do |f|
+//     = f.input :message
+//     = f.submit "Add a Comment", :class => 'btn btn-success'
+.booyah-box.col-xs-10.col-xs-offset-1 
+  / Button trigger modal
+  %button.btn.btn-success.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal"}
+    Add a comment
+  / Modal
+  #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+          %h4#myModalLabel.modal-title Add a comment
+        = simple_form_for @comment, :url => post_comments_path(@post) do |f|
+          .modal-body
+            = f.input :message
+          .modal-footer
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+            = f.submit "Add a Comment", :class => 'btn btn-primary'
+            
+.booyah-box.col-xs-10.col-xs-offset-1
+  %h1 Comments
+  - @post.comments.each do |comment|
+    %div
+      %blockquote
+        \-
+        \#{comment.message}
+        %small= comment.user_id
