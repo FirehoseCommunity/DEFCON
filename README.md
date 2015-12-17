@@ -11,3 +11,5 @@ View the wireframes for this app [here](https://github.com/FirehoseCommunity/DEF
 * Matthew Lepley
 * Ken Mazaika
 * Robert Sapunarich
+* Cecelia Havens
+* Amanda Mark
