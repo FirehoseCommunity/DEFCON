@@ -8,7 +8,7 @@ Defcon::Application.routes.draw do
   resources :posts do
     resources :comments, :only => :create 
   end 
-  
+  resources :comments, :only => :destroy  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
