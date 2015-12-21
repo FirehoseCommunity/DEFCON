@@ -1,11 +1,14 @@
-%h1@post.title
-%p @post.body
+.col-xs-offset-1.col-xs-10.booyah-box
+  %h1= @post.title
+  %i= @post.body
+  %br/
+  %br/
+ 
+
+.col-xs-10.col-xs-offset-1
+  %h1.pull-left Comments
   
-// .booyah-box.col-xs-10.col-xs-offset-1
-//   .clear
-//   = simple_form_for @comment, :url => post_comments_path(@post) do |f|
-//     = f.input :message
-//     = f.submit "Add a Comment", :class => 'btn btn-success'
+
 .booyah-box.col-xs-10.col-xs-offset-1 
   / Button trigger modal
   %button.btn.btn-success.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal"}
@@ -27,8 +30,11 @@
 .booyah-box.col-xs-10.col-xs-offset-1
   %h1 Comments
   - @post.comments.each do |comment|
-    %div
-      %blockquote
-        \-
-        \#{comment.message}
-        %small= comment.user_id
+    %blockquote
+      \#{comment.message}
+      %small= comment.user_id
+  // - if comment.controlled_by?(current_user)
+  //   = link_to 'Destroy', comment_path(comment), :method => :delete, :class => 'btn btn-xs btn-primary pull-right'
+  .clr 
+    
+  
