@@ -26,7 +26,7 @@
           %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
         - else
           %li= link_to 'Sign in', new_user_session_path
-        - if user_signed_in?
+        - if user_signed_in? && current_user.admin
           %li= link_to 'Invite Users', new_user_invitation_path
           %a{:href => "#"} Link
     / /.navbar-collapse
