@@ -57,3 +57,5 @@ gem 'factory_girl_rails'
 
 gem 'simple_form'
 
+gem 'devise_invitable', '~> 1.5.2'
+
