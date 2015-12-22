@@ -14,4 +14,8 @@ class User < ActiveRecord::Base
     return true
   end
 
+  def check_if_admin
+    self.admin?
+  end
+
 end 

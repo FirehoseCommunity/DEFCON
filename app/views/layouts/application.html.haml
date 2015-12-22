@@ -15,7 +15,7 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "#"} Defcon
+          %a.navbar-brand{:href => root_path} Defcon
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
@@ -26,7 +26,8 @@
           %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
         - else
           %li= link_to 'Sign in', new_user_session_path
-        %li
+        - if user_signed_in?
+          %li= link_to 'Invite Users', new_user_invitation_path
           %a{:href => "#"} Link
     / /.navbar-collapse
     / /.container-fluid
