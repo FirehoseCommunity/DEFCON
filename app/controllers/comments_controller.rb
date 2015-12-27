@@ -7,6 +7,16 @@ def create
   redirect_to post_path(@post)
 end
 
+def edit
+  @comment = Comment.find(params[:comment_id])
+end
+
+def update
+  @comment = Comment.find(params[:comment_id])
+  @comment.update_attributes(comment_params)
+  redirect_to post_path(@post)
+end
+
 def destroy
   @post = comment.post
   comment.destroy 
