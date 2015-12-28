@@ -6,7 +6,7 @@ Defcon::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
   resources :posts do
-    resources :comments, :only => [:create, :edit]
+    resources :comments, :only => :create
   end 
   resources :comments, :only => [:destroy, :edit, :update]
   # Example of regular route:

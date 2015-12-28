@@ -8,13 +8,13 @@ def create
 end
 
 def edit
-  @comment = Comment.find(params[:comment_id])
+  @comment = Comment.find(params[:id])
 end
 
 def update
-  @comment = Comment.find(params[:comment_id])
+  @comment = Comment.find(params[:id])
   @comment.update_attributes(comment_params)
-  redirect_to post_path(@post)
+  redirect_to post_path(@comment.post)
 end
 
 def destroy
@@ -25,12 +25,12 @@ end
 
 private
 
-def require_comment
-  render_not_found unless @comment
+def require_current_comment
+    render_not_found unless current_comment
 end
 
-def comment
-  @comment ||= Comment.find_by_id(params[:id])
+def current_comment
+  @current_comment ||= Comment.find_by_id(params[:id])
 end
 
 def require_comment_destroyable
