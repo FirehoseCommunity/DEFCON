@@ -32,9 +32,10 @@
   - @post.comments.each do |comment|
     %blockquote
       \#{comment.message}
-      %small= comment.user_id
+      %small= comment.user.email
       - if comment.controlled_by?(current_user)
         = link_to 'Destroy', comment_path(comment), :method => :delete, :class => 'btn btn-xs btn-primary pull-right'
+        %br/
         = link_to 'Edit', edit_comment_path(comment), :class => 'btn btn-xs btn-primary pull-right'
   .clr 
     
