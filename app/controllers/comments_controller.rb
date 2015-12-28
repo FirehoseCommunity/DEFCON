@@ -18,8 +18,8 @@ def update
 end
 
 def destroy
-  @post = comment.post
-  comment.destroy 
+  @post = current_comment.post
+  current_comment.destroy 
   redirect_to post_path(@post)
 end
 
@@ -34,7 +34,7 @@ def current_comment
 end
 
 def require_comment_destroyable
-    render_not_found(:forbidden) unless comment.controlled_by?(current_user)
+    render_not_found(:forbidden) unless current_comment.controlled_by?(current_user)
 end
 
   def comment_params
