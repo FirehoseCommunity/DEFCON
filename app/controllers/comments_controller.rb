@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
   before_action :require_current_post, :only => :create
   before_action :require_current_comment, :only => :destroy
   before_action :require_current_comment_destroyable, :only => :destroy
+  before_action :require_current_comment_is_editable, :only => [:edit, :update, :destroy]
 
 
 def create
@@ -50,6 +51,12 @@ def require_current_post
     render_not_found unless current_post
 end
 
+def require_current_comment_is_editable
+    unless current_user.can_edit?(current_comment)
+      render_not_found(:unauthorized) 
+    end
+end
+  
   helper_method :current_post
   def current_post
     @current_post ||= Post.find_by_id(params[:post_id])
