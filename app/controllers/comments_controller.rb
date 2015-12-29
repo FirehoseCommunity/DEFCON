@@ -1,8 +1,13 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :require_current_post, :only => :create
+  before_action :require_current_comment, :only => :destroy
+  before_action :require_current_comment_destroyable, :only => :destroy
+
 
 def create
-  @post = Post.find(params[:post_id])
+  @post = Post.find_by_id(params[:post_id])
+  render_not_found if @post.blank?
   @post.comments.create(comment_params.merge(:user => current_user))
   redirect_to post_path(@post)
 end
@@ -33,12 +38,21 @@ def current_comment
   @current_comment ||= Comment.find_by_id(params[:id])
 end
 
-def require_comment_destroyable
+def require_current_comment_destroyable
     render_not_found(:forbidden) unless current_comment.controlled_by?(current_user)
 end
 
   def comment_params
     params.require(:comment).permit(:message)
+  end
+  
+def require_current_post
+    render_not_found unless current_post
+end
+
+  helper_method :current_post
+  def current_post
+    @current_post ||= Post.find_by_id(params[:post_id])
   end
 end
 

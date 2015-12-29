@@ -20,12 +20,13 @@ class CommentsControllerTest < ActionController::TestCase
     assert_equal u, comment.user
   end
   
-  # test "create comment needs a valid post_id" do
-  #   u = FactoryGirl.create(:user)
-  #   sign_in u
-  #   post :create, :post_id => 'omg'
-  #   assert_response :not_found
-  # end
+  test "create comment needs a valid post_id" do
+    u = FactoryGirl.create(:user)
+    sign_in u
+    post :create, :post_id => 'omg'
+    assert_response :not_found
+  end
+  
    test "destroy requires you to be logged in" do
     comment = FactoryGirl.create(:comment)
     delete :destroy, :id => comment.id
