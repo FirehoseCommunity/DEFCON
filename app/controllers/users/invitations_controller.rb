@@ -1,9 +1,11 @@
 class Users::InvitationsController < Devise::InvitationsController
+  before_action :check_if_admin
+
   private
 
-  def invite_resource
-    if user.admin.false
-      render :text => 'Unauthorized', :status => :unauthorized
+  def check_if_admin
+    if !current_user.admin
+      return render :text => 'Unauthorized', :status => :unauthorized
     end
   end
 
