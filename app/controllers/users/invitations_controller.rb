@@ -5,7 +5,7 @@ class Users::InvitationsController < Devise::InvitationsController
 
   def check_if_admin
     if !current_user.admin
-      return render :text => 'Unauthorized', :status => :unauthorized
+      render :text => 'Unauthorized', :status => :unauthorized
     end
   end
 
