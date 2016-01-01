@@ -33,15 +33,7 @@ class CommentsControllerTest < ActionController::TestCase
     assert_redirected_to new_user_session_path
   end
   
-  test "destroy not logged in" do
-   comment = FactoryGirl.create(:comment)
-    assert_no_difference 'Comment.count' do
-      delete :destroy, :id => comment.id
-    end
-    assert_redirected_to new_user_session_path
-  end
-  
-  test "author can destroy comment" do
+    test "author can destroy comment" do
     u = FactoryGirl.create(:user)
     sign_in u
     comment = FactoryGirl.create(:comment, :user => u)
@@ -50,15 +42,25 @@ class CommentsControllerTest < ActionController::TestCase
     assert_nil Comment.find_by_id(comment.id)
   end
   
-# test "destroy someone elses" do
-#     comment = FactoryGirl.create(:comment)
-#     sign_in FactoryGirl.create(:user)
-#     assert_no_difference 'Comment.count' do
-#       delete :destroy, :id => comment.id
-#     end
-#     assert_response :unauthorized
-#   end
+  test "destroy not logged in" do
+   comment = FactoryGirl.create(:comment)
+    assert_no_difference 'Comment.count' do
+      delete :destroy, :id => comment.id
+    end
+    assert_redirected_to new_user_session_path
+  end
+  
+test "random person cannot destroy a comment" do
+    u = FactoryGirl.create(:user)
+    sign_in u
 
+    comment = FactoryGirl.create(:comment)
+    delete :destroy, :id => comment.id
+    assert_response :forbidden
+
+    assert Comment.find_by_id(comment.id).present?
+  end
+  
 test "destroy not found" do
     sign_in FactoryGirl.create(:user)
     delete :destroy, :id => 'omg'
@@ -88,8 +90,9 @@ test "edit not logged in" do
   end
   
   # test "edit not found" do
-  #   sign_in FactoryGirl.create(:user)
-  #   get :edit, :id => 'tacocat'
+  #   u = FactoryGirl.create(:user)
+  #   sign_in u
+  #   put :edit, :id => 'tacocat'
   #   assert_response :not_found
   # end
   
@@ -120,9 +123,6 @@ test "edit not logged in" do
   #   put :update, :id => 'tacocat', :comment => {:message => 'tacocat'}
   #   assert_response :not_found
   # end
-  
-  
-
   
 end
 

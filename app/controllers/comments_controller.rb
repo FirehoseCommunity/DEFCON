@@ -15,12 +15,19 @@ end
 
 def edit
   @comment = Comment.find(params[:id])
+  if @comment.user != current_user
+    return render :text => 'Not Allowed', :status => :forbidden
+  end
 end
 
 def update
   @comment = Comment.find(params[:id])
   @comment.update_attributes(comment_params)
-  redirect_to post_path(@comment.post)
+  if current_comment.valid?
+    redirect_to post_path(@comment.post)
+  else
+    render :edit, :status => unprocessable_entity
+  end
 end
 
 def destroy
