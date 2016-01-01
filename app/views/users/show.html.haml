@@ -1,0 +1,13 @@
+%h1.text-center User Dashboard
+.booyah-box.col-xs-10.col-xs-offset-1
+  %h2= @user.email
+  %hr
+  %h4 Name:&nbsp&nbsp #{@user.name}
+  %h4 Member Since:&nbsp&nbsp #{@user.created_at.strftime("%B %d, %Y")}
+  %h4 Total Posts:&nbsp&nbsp #{@user.posts.count}
+  %h4 Total Comments:&nbsp&nbsp #{@user.comments.count}
+  %h4 Total Upvotes:&nbsp&nbsp 
+  %h4 Current Notification Setting:&nbsp&nbsp #{@user.notification_type}
+  %br
+  =link_to 'Update Info', edit_user_path(@user), :class => 'btn btn-primary btn-large'
+
