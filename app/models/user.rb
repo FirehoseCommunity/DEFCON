@@ -14,4 +14,9 @@ class User < ActiveRecord::Base
     return true
   end
 
+def can_edit?(p)
+    return false if p.blank?
+
+    p.user_id == self.id 
+end
 end 
