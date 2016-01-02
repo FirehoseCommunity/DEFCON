@@ -89,12 +89,12 @@ test "edit not logged in" do
     assert_response :success
   end
   
-  # test "edit not found" do
-  #   u = FactoryGirl.create(:user)
-  #   sign_in u
-  #   put :edit, :id => 'tacocat'
-  #   assert_response :not_found
-  # end
+  test "edit not found" do
+    u = FactoryGirl.create(:user)
+    sign_in u
+    put :edit, :id => 'tacocat'
+    assert_response :not_found
+  end
   
   test "update not logged in" do
     comment = FactoryGirl.create(:comment, :message => 'stackcats')
@@ -117,12 +117,12 @@ test "edit not logged in" do
     assert_equal 'tacocat', comment.reload.message
   end
   
-  # test "update not found" do
-  #   u = FactoryGirl.create(:user)
-  #   sign_in u
-  #   put :update, :id => 'tacocat', :comment => {:message => 'tacocat'}
-  #   assert_response :not_found
-  # end
+  test "update not found" do
+    u = FactoryGirl.create(:user)
+    sign_in u
+    put :update, :id => 'tacocat', :comment => {:message => 'tacocat'}
+    assert_response :not_found
+  end
   
 end
 

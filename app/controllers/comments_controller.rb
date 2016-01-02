@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
+  before_action :require_current_comment, :only => [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
   before_action :require_current_post, :only => :create
-  before_action :require_current_comment, :only => :destroy
   before_action :require_current_comment_destroyable, :only => :destroy
   before_action :require_current_comment_is_editable, :only => [:edit, :update, :destroy]
 
