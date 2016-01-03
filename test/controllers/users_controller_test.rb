@@ -73,7 +73,6 @@ class UsersControllerTest < ActionController::TestCase
     sign_in p
     put :update, id: u.id, user: { name: "ILovePizza" }
     u.reload
-    waiting for admin flag fix
     assert_equal "ILovePizza", u.name
   end
 
