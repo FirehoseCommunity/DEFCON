@@ -4,10 +4,20 @@
   %hr
   %h4 Name:&nbsp&nbsp #{@user.name}
   %h4 Member Since:&nbsp&nbsp #{@user.created_at.strftime("%B %d, %Y")}
+  %br
   %h4 Total Posts:&nbsp&nbsp #{@user.posts.count}
   %h4 Total Comments:&nbsp&nbsp #{@user.comments.count}
-  %h4 Total Upvotes:&nbsp&nbsp 
-  %h4 Current Notification Setting:&nbsp&nbsp #{@user.notification_type}
+  %h4 Total Upvotes:&nbsp&nbsp
   %br
-  =link_to 'Update Info', edit_user_path(@user), :class => 'btn btn-primary btn-large'
+  - if current_user == @user || current_user.admin?
+    %h4 Current Email Notification Settings:&nbsp&nbsp 
+    %ul
+      - if @user.post_notification?
+        %li Notify For New Posts
+      - if @user.comment_notification?
+        %li Notify For New Comments On Your Posts
+      - unless @user.post_notification? || @user.comment_notification?
+        %li Do Not Notify About New Posts Or Comments
+    %br
+    =link_to 'Update Info', edit_user_path(@user), :class => 'btn btn-primary btn-large'
 

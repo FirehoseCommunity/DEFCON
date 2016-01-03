@@ -1,21 +1,21 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :only_self_and_admin, except: :show
 
   def show
-    # will just allow you to see your own dashboard for now
-    # maybe add a separate/modified view for a public profile?
-    @user = current_user
+    # will only you to view anyone's profile for now
+    # maybe add a separate/modified view for a public profile and restrict the dashboard?
+    @user = User.find(params[:id])
   end
 
   def edit
-    # only lets a user edit their own profile
-    # should add admin capability in the future
-    @user = current_user
-    @notification_options = [["New Posts and Comments", "Posts and Comments"], ["New Posts", "Posts"], ["None", "None"]]
+    # only lets a user update their own profile (unless admin)
+    @user = User.find(params[:id])
   end
 
   def update
-    @user = current_user
+    # only lets a user update their own profile (unless admin)
+    @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       redirect_to user_path(@user)
     else
@@ -26,6 +26,13 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :notification_type)
+      params.require(:user).permit(:name, :post_notification, :comment_notification)
+    end
+
+    def only_self_and_admin
+      unless current_user == User.find(params[:id]) || current_user.admin?
+        flash[:alert]= "Can only edit your own profile!"
+        redirect_to root_path
+      end
     end
 end
