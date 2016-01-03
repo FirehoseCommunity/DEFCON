@@ -87,5 +87,4 @@ class UsersControllerTest < ActionController::TestCase
     assert_equal "Can only edit your own profile!", flash[:alert]
     assert_redirected_to root_path
   end
-
 end

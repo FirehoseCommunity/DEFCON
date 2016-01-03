@@ -40,4 +40,10 @@ class UserTest < ActiveSupport::TestCase
     assert user.comment_notification
   end
 
+  test "will pull list of users who want to be notified of posts" do
+    user1 = FactoryGirl.create(:user)
+    user2 = FactoryGirl.create(:user)
+    user3 = FactoryGirl.create(:user, post_notification: false)
+    assert_equal 2, User.all.users_to_notify.count
+  end
 end
