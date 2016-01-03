@@ -7,8 +7,8 @@
   = simple_form_for @user do |f|
     .field
       = f.input :name, autofocus: true
-      = f.input :post_notification
-      = f.input :comment_notification
+      = f.input :post_notification, label: "Notify me about new posts"
+      = f.input :comment_notification, label: "Notify me about new comments on my posts"
     .actions
       = f.submit "Update", :class => 'btn btn-primary btn-large'
       = link_to "Cancel", user_path(@user), :class => 'btn btn-warning btn-large'
