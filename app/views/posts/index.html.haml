@@ -24,12 +24,14 @@
         
 - @posts.each do |post|
   .booyah-box.col-xs-10.col-xs-offset-1
-    %h1= post.title
+    %h1= link_to post.title, post_path(post)
     %i= post.body
     %br/
     %br/
     %p= post.created_at
     %br/
+    - if post.user.present?
+      %small= post.user.email
         
         
       
