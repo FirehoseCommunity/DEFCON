@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :posts
   before_save :check_if_first_user
   has_many :comments 
+  validates :name, presence: { :message => "Name is required!" }
+  scope :users_to_notify, -> { where(:post_notification => true)  }
 
   def check_if_first_user
     self.admin = !User.any?

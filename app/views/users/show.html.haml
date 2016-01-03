@@ -1,0 +1,23 @@
+%h1.text-center User Dashboard
+.booyah-box.col-xs-10.col-xs-offset-1
+  %h2= selected_user.email
+  %hr
+  %h4 Name:&nbsp&nbsp #{selected_user.name}
+  %h4 Member Since:&nbsp&nbsp #{selected_user.created_at.strftime("%B %d, %Y")}
+  %br
+  %h4 Total Posts:&nbsp&nbsp #{selected_user.posts.count}
+  %h4 Total Comments:&nbsp&nbsp #{selected_user.comments.count}
+  %h4 Total Upvotes:&nbsp&nbsp
+  %br
+  - if current_user == selected_user || current_user.admin?
+    %h4 Current Email Notification Settings:&nbsp&nbsp 
+    %ul
+      - if selected_user.post_notification?
+        %li Notify For New Posts
+      - if selected_user.comment_notification?
+        %li Notify For New Comments On Your Posts
+      - unless selected_user.post_notification? || selected_user.comment_notification?
+        %li Do Not Notify About New Posts Or Comments
+    %br
+    =link_to 'Update Info', edit_user_path(selected_user), :class => 'btn btn-primary btn-large'
+

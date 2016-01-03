@@ -9,6 +9,7 @@ Defcon::Application.routes.draw do
     resources :comments, :only => :create
   end 
   resources :comments, :only => [:destroy, :edit, :update]
+  resources :users, :only => [:show, :edit, :update]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
