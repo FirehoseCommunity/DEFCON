@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   before_action :only_self_and_admin, except: :show
 
   def show
-    # will only you to view anyone's profile for now
+    # will allow you to view anyone's profile for now 
+    # some things are currently hidden in the view
     # maybe add a separate/modified view for a public profile and restrict the dashboard?
     @user = User.find(params[:id])
   end
