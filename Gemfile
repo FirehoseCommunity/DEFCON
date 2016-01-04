@@ -58,3 +58,9 @@ gem 'factory_girl_rails'
 gem 'simple_form'
 
 gem 'rails_autolink'
+
+gem "opengraph_parser"
+
+gem "twitter-text"
+
+gem 'fakeweb'
