@@ -24,9 +24,7 @@ class Post < ActiveRecord::Base
 
     def add_url_protocol(url)
       # adds http or https to links if they are not present so OG parser works
-      unless url[/^https?:\/\//] || url[/^http?:\/\//]
-        return "http://#{url}"
-      end
-      return url
+      return "http://#{url}" unless url[/^https?:\/\//] || url[/^http?:\/\//]
+      url
     end
 end
