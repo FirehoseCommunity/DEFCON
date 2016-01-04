@@ -1,9 +1,19 @@
 .col-xs-offset-1.col-xs-10.booyah-box
   %h1= @post.title
-  %i= auto_link(@post.body, :html => { :target => '_blank' }).html_safe
-  %br/
-  %br/
- 
+  %hr
+  %p= auto_link(@post.body, :html => { :target => '_blank' }).html_safe
+  %br
+  %br
+  %hr
+  - if @post.og_title.present?
+    %h3 Referenced Link:
+    %br
+    = link_to image_tag(@post.og_image), @post.og_url
+    %br
+    %br
+    %h4= link_to @post.og_title, @post.og_url
+    %p=@post.og_description 
+  %br
 
 .col-xs-10.col-xs-offset-1
   %h1.pull-left Comments
