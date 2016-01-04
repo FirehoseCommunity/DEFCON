@@ -10,6 +10,7 @@ class PostTest < ActiveSupport::TestCase
   end
 
   test "grabs opengraph data from site url" do
+    FakeWeb.register_uri(:any, 'http://www.thefirehoseproject.com', :response => File.join('test/fixtures/og_response.json'))    
     # will need to update this in the future if the og metadata tags on the site change
     # currently a helper method tacks on http to the url, maybe test that separately?
     post = FactoryGirl.create(:post, body: "How about www.thefirehoseproject.com?")

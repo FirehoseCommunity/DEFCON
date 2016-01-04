@@ -62,3 +62,5 @@ gem 'rails_autolink'
 gem "opengraph_parser"
 
 gem "twitter-text"
+
+gem 'fakeweb'
