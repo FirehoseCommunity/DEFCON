@@ -1,25 +1,27 @@
-%h1 Write a new post
+.text-center
+  %h1 Write a new post
+  
+  / Button trigger modal
+  %button.btn.btn-primary.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
+    Write A Post
 
-/ Button trigger modal
-%button.btn.btn-primary.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
-  Write A Post
+%br/
+
 / Modal
 #myModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
   .modal-dialog{:role => "document"}
     .modal-content
       .modal-header
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-        %span{"aria-hidden" => "true"} &times;
         %h4#myModalLabel.modal-title Write a new post
       .modal-body
         =simple_form_for @post do |f|
           =f.input :title
           =f.input :body
           %br/
-          =f.submit 'Create', :class => 'btn btn-primary'
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-        %button.btn.btn-primary{:type => "button"} Save changes
+          .modal-footer
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button", class: 'pull-left'} Close
+            =f.submit 'Create', class: 'btn btn-primary pull-right'
         
         
 - @posts.each do |post|
