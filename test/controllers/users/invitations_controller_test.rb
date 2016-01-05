@@ -14,9 +14,8 @@ class Users::InvitationsControllerTest < ActionController::TestCase
   end
 
   test "non-admin user cannot access invite page" do
-    user1 = User.create(:email => "example1@example.com", :password => "password", :password_confirmation => "password", :admin => true)
-    user2 = User.create(:email => "example2@example.com", :password => "password", :password_confirmation => "password", :admin => false)
-    sign_in user2
+    user = User.create(:email => "example@example.com", :password => "password", :password_confirmation => "password", :admin => false)
+    sign_in user
     get :new
     assert_response :unauthorized
   end
