@@ -1,11 +1,24 @@
-%h1@post.title
-%p @post.body
+.col-xs-offset-1.col-xs-10.booyah-box
+  %h1= @post.title
+  %hr
+  %p= auto_link(@post.body, :html => { :target => '_blank' }).html_safe
+  %br
+  %br
+  %hr
+  - if @post.og_title.present?
+    %h3 Referenced Link:
+    %br
+    = link_to image_tag(@post.og_image), @post.og_url
+    %br
+    %br
+    %h4= link_to @post.og_title, @post.og_url
+    %p=@post.og_description
+  %br
+
+.col-xs-10.col-xs-offset-1
+  %h1.pull-left Comments
   
-// .booyah-box.col-xs-10.col-xs-offset-1
-//   .clear
-//   = simple_form_for @comment, :url => post_comments_path(@post) do |f|
-//     = f.input :message
-//     = f.submit "Add a Comment", :class => 'btn btn-success'
+
 .booyah-box.col-xs-10.col-xs-offset-1 
   / Button trigger modal
   %button.btn.btn-success.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal"}
@@ -27,8 +40,13 @@
 .booyah-box.col-xs-10.col-xs-offset-1
   %h1 Comments
   - @post.comments.each do |comment|
-    %div
-      %blockquote
-        \-
-        \#{comment.message}
-        %small= comment.user_id
+    %blockquote
+      \#{comment.message}
+      %small= comment.user.email
+      - if current_user && current_user.can_edit?(comment)
+        = link_to 'Destroy', comment_path(comment), :method => :delete, :class => 'btn btn-xs btn-primary pull-right'
+        %br/
+        = link_to 'Edit', edit_comment_path(comment), :class => 'btn btn-xs btn-primary pull-right'
+  .clr 
+    
+  

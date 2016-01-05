@@ -1,0 +1,14 @@
+%h1.text-center User Dashboard
+.booyah-box.col-xs-10.col-xs-offset-1
+  %h3
+    Edit Your User Info:
+    %br
+    %br
+  = simple_form_for selected_user do |f|
+    .field
+      = f.input :name, autofocus: true
+      = f.input :post_notification, label: "Notify me about new posts"
+      = f.input :comment_notification, label: "Notify me about new comments on my posts"
+    .actions
+      = f.submit "Update", :class => 'btn btn-primary btn-large'
+      = link_to "Cancel", user_path(selected_user), :class => 'btn btn-warning btn-large'

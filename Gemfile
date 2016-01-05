@@ -59,3 +59,10 @@ gem 'simple_form'
 
 gem 'devise_invitable', '~> 1.5.2'
 
+gem 'rails_autolink'
+
+gem "opengraph_parser"
+
+gem "twitter-text"
+
+gem 'fakeweb'
