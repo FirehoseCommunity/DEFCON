@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 20160104012421) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-<<<<<<< HEAD
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.boolean  "admin"
@@ -65,14 +64,12 @@ ActiveRecord::Schema.define(version: 20160104012421) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
-=======
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
     t.boolean  "admin",                  default: false
     t.boolean  "post_notification",      default: true
     t.boolean  "comment_notification",   default: true
     t.string   "name",                   default: "I Am Awesome"
->>>>>>> master
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
