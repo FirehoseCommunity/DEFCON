@@ -17,7 +17,7 @@
       .modal-body
         =simple_form_for @post do |f|
           =f.input :title
-          =f.input :body
+          =f.input :body, as: :pagedown, input_html: { preview: true, rows: 10 }
           %br/
           .modal-footer
             %button.btn.btn-default{"data-dismiss" => "modal", :type => "button", class: 'pull-left'} Close
