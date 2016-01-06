@@ -66,3 +66,7 @@ gem "opengraph_parser"
 gem "twitter-text"
 
 gem 'fakeweb'
+
+gem 'pagedown-bootstrap-rails'
+
+gem "font-awesome-rails"
