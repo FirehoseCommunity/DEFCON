@@ -21,26 +21,23 @@
           %ul.nav.navbar-nav
             %li
               = link_to 'View Posts', posts_path 
-        %ul.nav.navbar-nav.navbar-right
-        - if user_signed_in?
-          %li= link_to 'My Profile', user_path(current_user)
-          %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
-        - else
-          %li= link_to 'Sign in', new_user_session_path
-        // %li
-        //   %a{:href => "#"} Link
-    / /.navbar-collapse
-    / /.container-fluid
+          %ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              %li= link_to 'My Profile', user_path(current_user)
+              %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
+            - else
+              %li= link_to 'Sign in', new_user_session_path
+        / /.navbar-collapse
+      / /.container-fluid
     - if notice.present?
-      %p.notice
-        = notice
+      %p.notice= notice
     - if alert.present?
-      %p.alert
-        = alert
-    // - if current_user.blank?
-    //   = link_to 'Sign in', new_user_session_path
-    // - else
-    //   Hello #{current_user.email}
-    //   = link_to  'Sign out', destroy_user_session_path, :method => :delete
+      %p.alert= alert
+      // - if current_user.blank?
+      //   = link_to 'Sign in', new_user_session_path
+      // - else
+      //   Hello #{current_user.email}
+      //   = link_to  'Sign out', destroy_user_session_path, :method => :delete
     %hr
     = yield
+    
