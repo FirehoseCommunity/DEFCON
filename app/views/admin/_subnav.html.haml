@@ -1,0 +1,37 @@
+/ _subnav.html.haml 20150107 ~AMP
+
+        / %li.dropdown
+        /   %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+        /     Dropdown
+        /     %span.caret
+        /   %ul.dropdown-menu
+        /     %li
+        /       %a{:href => "#"} Action
+        /     %li
+        /       %a{:href => "#"} Another action
+        /     %li
+        /       %a{:href => "#"} Something else here
+        /     %li.divider{:role => "separator"}
+        /     %li
+        /       %a{:href => "#"} Separated link
+        /     %li.divider{:role => "separator"}
+        /     %li
+        /       %a{:href => "#"} One more separated link
+
+%li.dropdown
+  %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+    Dropdown
+    %span.caret
+  %ul.dropdown-menu
+    %li
+      = link_to 'User Admin', admin_users_path
+    %li
+      %a{:href => "#"} Another action
+    %li
+      %a{:href => "#"} Something else here
+    %li.divider{:role => "separator"}
+    %li
+      %a{:href => "#"} Separated link
+    %li.divider{:role => "separator"}
+    %li
+      %a{:href => "#"} One more separated link

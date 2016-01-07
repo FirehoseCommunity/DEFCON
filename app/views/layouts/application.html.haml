@@ -20,7 +20,9 @@
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
-              = link_to 'View Posts', posts_path 
+              = link_to 'View Posts', posts_path
+        - if current_user.admin?
+          = render partial: "layouts/adminmenu"
         %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           %li= link_to 'My Profile', user_path(current_user)
