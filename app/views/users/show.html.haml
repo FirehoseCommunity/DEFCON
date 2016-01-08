@@ -1,6 +1,8 @@
 %h1.text-center User Dashboard
 .booyah-box.col-xs-10.col-xs-offset-1
-  %h2= selected_user.email
+  %h2
+    = image_tag selected_user.gravatar_url(default: "retro"), alt: selected_user.name, class: "gravatar"
+    = selected_user.email
   %hr
   %h4 Name:&nbsp&nbsp #{selected_user.name}
   %h4 Member Since:&nbsp&nbsp #{selected_user.created_at.strftime("%B %d, %Y")}
