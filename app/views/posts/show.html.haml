@@ -37,12 +37,14 @@
         .modal-header
           %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
           %h4#myModalLabel.modal-title Add a comment
-        = simple_form_for @comment, :url => post_comments_path(@post) do |f|
           .modal-body
-            = f.input :message
-          .modal-footer
-            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-            = f.submit "Add a Comment", :class => 'btn btn-primary'
+            = simple_form_for @comment, :url => post_comments_path(@post) do |f|
+              =f.input :message, as: :pagedown, input_html: { preview: true, rows: 10 }
+              %br/
+              .modal-footer
+                %button.btn.btn-default{"data-dismiss" => "modal", :type => "button", class: 'pull-left'} Close
+                =f.submit 'Create', class: 'btn btn-primary pull-right'
+          
             
 .booyah-box.col-xs-10.col-xs-offset-1
   %h1 Comments
