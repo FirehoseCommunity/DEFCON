@@ -31,20 +31,17 @@
               %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
             - else
               %li= link_to 'Sign in', new_user_session_path
-        // %li
-        //   %a{:href => "#"} Link
-    / /.navbar-collapse
-    / /.container-fluid
+        / /.navbar-collapse
+      / /.container-fluid
     - if notice.present?
-      %p.notice
-        = notice
+      %p.notice= notice
     - if alert.present?
-      %p.alert
-        = alert
-    // - if current_user.blank?
-    //   = link_to 'Sign in', new_user_session_path
-    // - else
-    //   Hello #{current_user.email}
-    //   = link_to  'Sign out', destroy_user_session_path, :method => :delete
+      %p.alert= alert
+      // - if current_user.blank?
+      //   = link_to 'Sign in', new_user_session_path
+      // - else
+      //   Hello #{current_user.email}
+      //   = link_to  'Sign out', destroy_user_session_path, :method => :delete
     %hr
     = yield
+    
