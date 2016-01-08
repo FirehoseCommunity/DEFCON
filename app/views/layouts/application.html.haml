@@ -23,7 +23,7 @@
               = link_to 'View Posts', posts_path
           %ul.nav.navbar-nav
             %li
-              - if current_user.admin?
+              - if current_user && current_user.admin?
                 = render partial: "layouts/adminmenu"
           %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
