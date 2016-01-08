@@ -12,6 +12,7 @@ class ActiveSupport::TestCase
   #fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  FakeWeb.allow_net_connect = false
 end
 
 class ActionController::TestCase

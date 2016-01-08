@@ -57,3 +57,16 @@ gem 'factory_girl_rails'
 
 gem 'simple_form'
 
+gem 'devise_invitable', '~> 1.5.2'
+
+gem 'rails_autolink'
+
+gem "opengraph_parser"
+
+gem "twitter-text"
+
+gem 'fakeweb'
+
+gem 'pagedown-bootstrap-rails'
+
+gem "font-awesome-rails"

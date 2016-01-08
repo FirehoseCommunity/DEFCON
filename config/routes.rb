@@ -1,5 +1,5 @@
 Defcon::Application.routes.draw do
-  devise_for :users, :skip => :registerable 
+  devise_for :users, :skip => :registerable, :controllers => { :invitations => 'users/invitations' } 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
