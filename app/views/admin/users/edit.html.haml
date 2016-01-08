@@ -1,0 +1,10 @@
+/ update.html.haml 20160107 Admin Users update page. ~AMP
+
+.booyah-box.col-xs-10.col-xs-offset-1
+  = simple_form_for @user, :url => admin_user_path do |f|
+    = f.label @user.name
+    %br
+    = f.label "Admin"
+    = f.input_field :admin, as: :boolean, checked_value: true, unchecked_value: false
+    %br
+    = f.submit "Apply Changes"

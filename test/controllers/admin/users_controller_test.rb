@@ -3,10 +3,10 @@ require 'test_helper'
 class Admin::UsersControllerTest < ActionController::TestCase
   test "will allow admin to view admin pages" do
     admin = FactoryGirl.create(:user, admin: true)
-    asser admin.admin?
+    assert admin.admin?
     sign_in admin
     get :index
-    assert_redirected_to admin_users_path
+    assert_response :success
   end
 
   test "will not allow non-admin to view admin pages" do
@@ -25,6 +25,7 @@ class Admin::UsersControllerTest < ActionController::TestCase
     put :update, id: user.id, user: { admin: true }
     user.reload
     assert user.admin?
+    assert_redirected_to user_path
   end
 
   test "will not allow non-admin to promote user" do
