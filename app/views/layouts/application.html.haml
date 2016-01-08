@@ -20,16 +20,19 @@
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
-              = link_to 'View Posts', posts_path 
-        %ul.nav.navbar-nav.navbar-right
-        - if user_signed_in?
-          %li= link_to 'My Profile', user_path(current_user)
-          %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
-        - else
-          %li= link_to 'Sign in', new_user_session_path
-          
-        - if user_signed_in? && current_user.admin
-          = link_to 'Invite Users', new_user_invitation_path
+              = link_to 'View Posts', posts_path
+          %ul.nav.navbar-nav
+            %li
+              - if current_user && current_user.admin?
+                = render partial: "layouts/adminmenu"
+          %ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              %li= link_to 'My Profile', user_path(current_user)
+              %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
+            - else
+              %li= link_to 'Sign in', new_user_session_path
+        // %li
+        //   %a{:href => "#"} Link
     / /.navbar-collapse
     / /.container-fluid
     - if notice.present?

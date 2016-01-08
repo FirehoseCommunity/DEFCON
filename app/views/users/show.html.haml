@@ -4,6 +4,8 @@
   %hr
   %h4 Name:&nbsp&nbsp #{selected_user.name}
   %h4 Member Since:&nbsp&nbsp #{selected_user.created_at.strftime("%B %d, %Y")}
+  - if selected_user.admin?
+    %h4 Admin
   %br
   %h4 Total Posts:&nbsp&nbsp #{selected_user.posts.count}
   %h4 Total Comments:&nbsp&nbsp #{selected_user.comments.count}
