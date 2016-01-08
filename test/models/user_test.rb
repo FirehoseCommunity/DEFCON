@@ -1,15 +1,13 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test "first user becomes admin" do
+  test "admin promotion" do
     user = User.create(:email => "test1@example.com", :password => "password", :password_confirmation => "password")
+    user2 = User.create(:email => "test2@example.com", :password => "password", :password_confirmation => "password", :admin => true)
+    assert !user.admin
+    assert user2.admin
+    user2.promote(user)
     assert user.admin
-  end
-
-  test "second user does not become admin" do
-    user = User.create(:email => "test1@example.com", :password => "password", :password_confirmation => "password")
-    user2 = User.create(:email => "test2@example.com", :password => "password", :password_confirmation => "password")
-    assert !user2.admin
   end
 
   test "user won't be added if username blank" do

@@ -1,0 +1,737 @@
+HTTP/1.1 200 OK
+Server: nginx/1.4.6 (Ubuntu)
+Date: Mon, 04 Jan 2016 16:18:52 GMT
+Content-Type: text/html; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Status: 200 OK
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-UA-Compatible: chrome=1
+ETag: "96c7e76a82892602ac9df32c052ba507"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _session_id=62add2d8854c26c19464fa10f0827013; path=/; HttpOnly
+X-Request-Id: d57af1b5-2077-4839-b081-89d8b85979e1
+X-Runtime: 0.059666
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="/assets/marketing-596d865b293614a4c52f359a58d48221.css" media="screen" rel="stylesheet" />
+  <script src="/assets/application-b67f80cbb1dad0940525dbdd47fc2d02.js"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="d0Y0K7vL8SD6Xnh+bA/5ca+wB85z4BtYj9y0E30POKU=" name="csrf-token" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- start Mixpanel --><script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+mixpanel.init("de16ca603f15e70753f71fb6728a8645");</script><!-- end Mixpanel -->
+
+
+    <title>
+      theFirehoseProject
+    </title>
+
+    <meta content='http://www.thefirehoseproject.com' property='og:url'>
+    <meta content='theFirehoseProject' property='og:site_name'>
+    <meta content='article' property='og:type'>
+    <meta content='Mentor Driven Online Coding Bootcamp' property='og:title'>
+    <meta content='Get 1-on-1 mentor sessions, join an agile team project and be ready to switch careers into web development or launch your own idea.' property='og:description'>
+    <meta content='http://www.thefirehoseproject.com/assets/meta-tag-coder.png' property='og:image'>
+
+  <link rel="icon" type="image/png" href="/assets/favicon-e0ea5974ad99e2acbcc364d7bc1b4801.png">
+
+  <script src="//use.typekit.net/rsc7hrf.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+  <script>(function() {
+    var _fbq = window._fbq || (window._fbq = []);
+    if (!_fbq.loaded) {
+      var fbds = document.createElement('script');
+      fbds.async = true;
+      fbds.src = '//connect.facebook.net/en_US/fbds.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(fbds, s);
+      _fbq.loaded = true;
+    }
+    _fbq.push(['addPixelId', '948223488529411']);
+    })();
+    window._fbq = window._fbq || [];
+    window._fbq.push(['track', 'PixelInitialized', {}]);
+  </script>
+
+  <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=948223488529411&amp;ev=PixelInitialized" /></noscript>
+
+</head>
+
+<body class="signed-out marketing_pages index   sticky-header">
+
+  <div id="nav-placeholder"></div>
+    <nav class='navbar navbar-default navbar-fixed-top  signed-out' role='navigation'>
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class='navbar-header'>
+        <div class="logo-section">
+          <img alt="Logo 70x100" id="logo" src="/assets/logo_70x100-4f294ed228b81e1daa45977c240db3ec.png" />
+          <a class="navbar-brand tk-open-sans" href="/" id="tfp-brand">
+            Firehose
+            <span id="core" style="opacity:0;">Core</span>
+</a>        </div>
+
+        <div class="middle-section">
+            <ul>
+              <li><a class="push-down-link" href="/curriculum">Curriculum &amp; Pricing</a></li>
+              <li><a href="http://blog.thefirehoseproject.com/posts/coding-bootcamp-strategy/" target="_blank">Coding Bootcamp Strategy</a></li>
+              <li><a class="push-down-link two-week-pink-link" href="/apply/prework">Get 2 Weeks Free</a></li>
+            </ul>
+        </div>
+
+        <div class="right-section">
+            <ul><li><a href="/users/sign_in">Login</a></li></ul>
+
+
+          <nav id="nav">   
+
+            <div style="display:none" id="show-when-loaded" class="logo-on-menu">
+              <div class="logo-section">
+                <img alt="Logo 70x100" id="logo" src="/assets/logo_70x100-4f294ed228b81e1daa45977c240db3ec.png" />
+                <a class="side-nav-brand" href="/">Firehose</a>
+              </div>
+
+              <br style="clear:both;"/>
+
+              <div class="sidenav-styling">
+
+                <!-- Not signed in -->
+                  <br>
+                  <ul>
+                    <li class='sidenav-basics-heading'>THE BASICS</li>
+                    <li><a href="/curriculum">Curriculum &amp; Pricing</a></li>
+                    <li><a href="http://blog.thefirehoseproject.com/posts/coding-bootcamp-strategy/" target="_blank">Coding Bootcamp Strategy</a></li>
+                    <li><a class="two-week-pink-link" href="/apply/prework">Get 2 Weeks Free</a></li>
+                  </ul>
+                  <br>
+                  <ul>
+                    <li class='sidenav-program-heading'>THE PROGRAM</li>
+                    <li><a href="/alumni">Alumni</a></li>
+                    <li><a href="/mentors">Code Mentors</a></li>
+                    <li><a href="/skills">Skills You Learn</a></li>
+                    <li><a href="/info-session">Info Session</a></li>
+                    <li><a href="/faq">FAQs</a></li>
+                  </ul>
+                  <br>
+                  <ul>
+                    <li class='sidenav-beyond-heading'>BEYOND</li>          
+                    <li><a href="/definitive-guide" target="_blank">Coding Bootcamp Guide</a></li>
+                    <li><a href="http://blog.thefirehoseproject.com" target="_blank">Blog</a></li>
+                  </ul>
+                  <br>
+                  <ul>
+                    <li>Reach us anytime at:</li>
+                    <li class='reach-us-email'><a href="mailto:questions@thefirehoseproject.com">questions@thefirehoseproject.com</a></li>
+                  </ul>
+                  <br><br>
+                  <ul>
+                    <li class='find-on-facebook'><a href="https://www.facebook.com/theFirehoseProject" target="_blank">Find us on Facebook</a></li>
+                    <br/><br><br>
+                    <li id='terms-of-use'><small><a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Use</a></small></li>
+                  </ul>
+
+                <!-- VCA Student -->
+
+                <!-- Mentors & Admins -->
+                <ul>
+
+
+                </ul>
+
+
+                <!-- Prework student -->
+
+
+              </div>
+            </div>
+          </nav>
+
+
+
+
+
+          <script>
+              $(document).ready(function(){
+
+                $('#show-when-loaded').show();
+                $('#nav').burgerMenu({
+                  translate: true,
+                  menuWidth: '350px',
+                  menuHeight: '100%',
+                  menuBorder: 'none',
+                  animateSpeed: 500,
+                  linkBorderBottom: 'none',
+                  keepButtonNextToMenu: true,
+                 // overlay: '#ffffff',
+                  position: 'right',
+                  fixed: true,
+                  showUntilWidth: 1000000,
+                  customContent: $('#nav').html(),
+                  customCallback: function(mode, hide) {
+                    if(mode === "starting" && ! hide) {
+                      $( ".navbar" ).animate({left: "-200px"});
+                      $( ".middle-section" ).animate({"margin-left": "0px"});
+                      $( ".right-section" ).animate({"right": "375px"});
+
+                        $('#user-avatar').animate({right: "390px"});
+                        $('#user-name').animate({right: "460px"});
+                    }
+                    else if(mode === "starting" && hide){
+                      $( ".navbar" ).animate({left: "0px"});
+                      $( ".middle-section" ).animate({"margin-left": "25%"});
+                      $( ".right-section" ).animate({"right": "70px"});
+                      $('#user-avatar').animate({right: "70px"});
+                      $('#user-name').animate({right: "140px"});
+                      
+                    }
+                  }
+                });
+              });
+            </script>
+        </div>
+
+        <script>
+          $(function() {
+            $('.navbar-toggle-yolo').click(function() {
+              $('#bs-example-navbar-collapse-1').toggle('slow');
+            });
+          });
+        </script>
+      
+      </div>
+    </nav>
+
+
+
+
+
+
+    <div class="content">
+      
+
+<!-- Big background image -->
+<section class="background_section">
+  
+  <div class="col-xs-12 col-xs-offset-0 font spacing text-center">
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div class="row typewriter-box">
+      <div class="pull-left we-create">
+        <h1>We create</h1>
+      </div>
+      <div class="text-left pull-left typed-section">
+        <h1><span id="typed" class=""></span></h1>
+      </div>
+    </div>
+    <br/>
+
+    <h4>Become a full-stack web developer with our immersive online apprenticeship </h4>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <h3 class="why-drink-from-the-firehose">Why drink from the Firehose?</h3>
+  
+    <br/>
+
+    <span class="glyphicon glyphicon-chevron-down glyphicon-white"></span>
+  </div>
+
+  <br style="clear:both;" />
+</section>
+
+
+<section class="skills">
+  <section class="real_world_skills">
+
+    <div class="col-sm-12 col-xs-12 font spacing text-center" id="diff">
+
+      <h1>Real World Skills</h1>
+
+      <br/>
+      <div class="col-sm-4 col-xs-12 skill">
+        <h3>Ruby on Rails</h3>
+        <h4>We treat you like a junior web developer from day one so you're ready for anything out in the real world. You will learn how to build and launch fully functional web applications that prepare you to thrive in the technical environment of startups.</h4>
+      </div>
+
+      <div class="col-sm-4 col-xs-12 skill">
+        <h3>Algorithms and Logic</h3>
+        <h4>Algorithms power our world. We make sure you understand, write and use algorithms like professional developers, integrate them into advanced web applications and modify your code so it solves whatever challenge the real world throws at you.</h4>
+      </div>
+
+      <div class="col-sm-4 col-xs-12 skill">
+        <h3>Group Projects</h3>
+        <h4>The best software in the world is built by amazing teams. We put you on an amazing team and teach you real world coding that transforms the way you do web development. Code reviews, GitHub in advanced mode, agile teams and weekly scrum meetings - welcome to the real world.</h4>
+      </div>
+
+
+      <br/>
+    </div>  
+
+
+    <br style="clear:both;" />
+    <br style="clear:both;" class="hidden-sm" />
+
+  </section>
+</section>
+
+
+<section class="school_logo_section alumni-section">
+  
+  <div class="arrow-down-pink">
+  </div>
+
+  <div class="col-sm-12 col-xs-12 font-gray">
+
+
+
+    <br/>
+    <br/>
+  
+
+    <h3 class="text-center">Our <strong>recent graduates</strong> are awesome!</h3>
+
+
+    <br/>
+    <br/>
+
+  </div>
+
+
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+
+
+  <!-- Wrapper for slides -->
+    <div class="carousel-inner student-box" role="listbox">
+      <div class="item active">
+
+        <div class="col-xs-half">
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <img alt="Chevron left" class="custom-chevron" src="/assets/chevron-left-07c62470642d29725767d6d1fd1d2e24.png" />
+            <span class="sr-only">Previous</span>
+          </a>
+        </div>
+
+        <div class="col-xs-10 col-sm-11">
+
+          <div class="col-sm-6 col-xs-12">
+            <div class="col-sm-4 col-xs-8">
+              <a href="/alumni"><img alt="Stephen circle" class="img-responsive" src="/assets/stephen-circle-7f210836d22ed8bd0a128754b523ed14.png" /></a>
+            </div>
+            <div class="col-sm-8 col-xs-12">
+              <h3>Stephen Foung</h3>
+              <h4><strong>Before: </strong>MBA Student<br/>
+              <strong>Now: </strong>CEO with 100+ paying customers</h4>
+              <p><strong>"Learning with theFirehoseProject made everything flow naturally and seamlessly...I highly recommend them."</strong></p>
+              <h5><a class="external-link" href="http://blog.thefirehoseproject.com/posts/which-online-coding-bootcamp-is-right-for-you" target="_blank">See Stephen&#39;s video review here</a></h5>
+            </div>
+          </div>
+
+          <br style="clear:both;" class="only-mobile" />
+          <br style="clear:both;" class="only-mobile" />
+          <br style="clear:both;" class="only-mobile" />
+
+          <div class="col-sm-6 col-xs-12">
+            <div class="col-sm-4 col-xs-8">
+              <a href="/alumni"><img alt="Erin circle" class="img-responsive" src="/assets/erin-circle-a02cffc08af8cc8ed89cda2a5ab66219.png" /></a>
+            </div>
+            <div class="col-sm-8 col-xs-12">
+              <h3>Erin Kim</h3>
+              <h4><strong>Before: </strong>Receptionist<br/>
+              <strong>Now: </strong>Art Genome Project at <a class="link" href="http://www.artsy.net" target="_blank">Artsy</a></h4>
+              <p><strong>
+                "Test Driven Development, algorithms and working on a group project is fundamental to landing a technical job - thanks to Firehose I got those skills."
+              </strong></p>
+              <h5><a class="external-link" href="http://blog.thefirehoseproject.com/posts/firehoseproject_graduate_interview_erin_kim/" target="_blank">See Erin&#39;s video review here</a></h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-half">
+
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <img alt="Chevron right" class="custom-chevron" src="/assets/chevron-right-f1b7bce225be68581ecffd465d041c7c.png" />
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+      <div class="item">
+
+
+
+        <div class="col-xs-half">
+
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <img alt="Chevron left" class="custom-chevron" src="/assets/chevron-left-07c62470642d29725767d6d1fd1d2e24.png" />
+            <span class="sr-only">Previous</span>
+          </a>
+        </div>
+        <div class="col-xs-10 col-sm-11">
+
+          <div class="col-sm-6 col-xs-12">
+            <div class="col-sm-4 col-xs-8">
+              <a href="/alumni"><img alt="Angel circle" class="img-responsive" src="/assets/angel-circle-b09f27877d59dddf19471d1b58b9b88f.png" /></a>
+            </div>
+            <div class="col-sm-8 col-xs-12">
+              <h3>Angel Jose</h3>
+              <h4><strong>Before: </strong>Used Car Salesman<br/>
+              <strong>Now: </strong>Lead Developer at <a href="http://www.sensay.it" target="_blank">SenSay</a></h4>
+              <p><strong>"Talking to the Firehose team, felt like talking to old friends...plus they have a group project, which is crucial if you want to land a job."</strong></p>
+              <h5 class=""><a class="external-link" href="http://www.blogofaj.com/?p=106" target="_blank">Read Angel&#39;s review on his blog</a></h5>
+            </div>
+          </div>
+
+          <br style="clear:both;" class="only-mobile" />
+          <br style="clear:both;" class="only-mobile" />
+          <br style="clear:both;" class="only-mobile" />
+
+          <div class="col-sm-6 col-xs-12">
+            <div class="col-sm-4 col-xs-8">
+              <a href="/alumni"><img alt="Ilya circle" class="img-responsive" src="/assets/Ilya-circle-01d3c337edf075236f28965da4425dfa.png" /></a>
+            </div>
+            <div class="col-sm-8 col-xs-12">
+              <h3><strong>Ilya Krasnov</strong></h3>
+              <h4><strong>Before: </strong>Product Manager<br/>
+              <strong>Now: </strong>Web Developer at <a href="http://www.enernoc.com" target="_blank">EnerNOC</a></h4>
+              <p><strong>"Firehose taught me everything a good developer needs to know."</strong></p>
+              <h5 class=""><a class="external-link" href="https://www.coursereport.com/blog/alumni-spotlight-ilya-thefirehoseproject" target="_blank">Read Ilya&#39;s review on CourseReport</a></h5>
+            </div>
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+        <div class="col-xs-half">
+
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <img alt="Chevron right" class="custom-chevron" src="/assets/chevron-right-f1b7bce225be68581ecffd465d041c7c.png" />
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+      </div>
+      
+    </div>
+
+
+
+  </div>
+
+  <br style="clear:both;" />
+  <br style="clear:both;" />
+
+
+  <h4 class="text-center"><strong><a class="section-links" href="/alumni">See more Firehose Alumni</a></strong></h4>
+  <div class="text-center">
+    <span class="glyphicon glyphicon-chevron-right glyphicon-white grey-icon"></span>
+  </div>
+
+    
+
+</div>
+
+<br style="clear:both;" />
+<br/>
+<br/>
+
+</section>
+
+
+<section class="experienced_mentors">
+  <div class="font spacing text-center">
+
+  <br/>
+  <br/>
+  <h1>World-Class Mentors</h1>
+
+    <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 font spacing text-center">
+
+    <br/>
+
+
+    <h4>At the FirehoseProject, we united world-class code mentors and senior web developers who are passionate about helping students grow into proficient developers, ready to thrive in the real world.
+    </h4>
+
+      <br/>
+    </div>
+
+    <div class="col-xs-10 col-xs-offset-1 text-center">
+      <img alt="Yc white" class="social-proof unsaturate" src="/assets/yc-white-074238b58779d89b1c2ad061262962f7.png" />
+      <img alt="Paypal" class="social-proof desaturate" src="/assets/paypal-c69761ec3f73714a2b8f960dcdf4da35.png" />
+      <img alt="Bbc white" class="social-proof unsaturate" src="/assets/bbc-white-564abb3fc333320a1294eaab0a8c3370.png" />
+      <img alt="Bitly" class="social-proof desaturate" src="/assets/bitly-accacf17ec67df47e2f3d20268f1c741.png" />
+      <img alt="Ebay" class="social-proof desaturate" src="/assets/ebay-a86f13c105c90de81ee865392815820a.png" />
+    </div>
+
+    <br style="clear:both;" /><br style="clear:both;" /><br style="clear:both;" />
+    <div class="col-xs-12 col-sm-3 bio-card">
+  <div class="card-wrapper" data-id="matthew_rothenberg">
+    <img alt="Mroth" class="img-responsive" src="/assets/mentors/mroth-186f96c6b295ab95bb81ca2857c75e35.jpg" />  
+
+    <div class="bio font-black">
+      <div style="line-height:6px;">
+        <br/>
+        <h4><i>Matthew Rothenberg</i></h4>
+      <br></div>
+      <h5>Former head of product and technology at Flickr and Bitly<h5>
+    </div>  
+  </div>      
+</div>  
+
+    <div class="col-xs-12 col-sm-3 bio-card">
+  <div class="card-wrapper" data-id="mike_coutermarsh">
+    <img alt="Mikec" class="img-responsive" src="/assets/mentors/mikec-79246d6dac5c7ba2da693fd719245eaf.png" />  
+
+    <div class="bio font-black">
+      <div style="line-height:6px;">
+        <br/>
+        <h4><i>Mike Coutermarsh</i></h4>
+      <br></div>
+      <h5>Senior developer at ProductHunt, author of the Heroku Cookbook<h5>
+    </div>  
+  </div>      
+</div>  
+
+    <div class="col-xs-12 col-sm-3 bio-card">
+  <div class="card-wrapper" data-id="ian_asaff">
+    <img alt="Ian" class="img-responsive" src="/assets/mentors/ian-1646bdaa5b3438bc0f682979420cceef.png" />  
+
+    <div class="bio font-black">
+      <div style="line-height:6px;">
+        <br/>
+        <h4><i>Ian Asaff</i></h4>
+      <br></div>
+      <h5>Senior engineer at Localytics, former senior web developer at PayPal and WHERE.com<h5>
+    </div>  
+  </div>      
+</div>  
+
+    <div class="col-xs-12 col-sm-3 bio-card">
+  <div class="card-wrapper" data-id="tyler_diaz">
+    <img alt="Tylerd" class="img-responsive" src="/assets/mentors/tylerd-6c8dd090868ad9d60c71fe118a6544a0.png" />  
+
+    <div class="bio font-black">
+      <div style="line-height:6px;">
+        <br/>
+        <h4><i>Tyler Diaz</i></h4>
+      <br></div>
+      <h5>Sold his first company for 5-figures in high school, the youngest founder admitted into Y-Combinator<h5>
+    </div>  
+  </div>      
+</div>  
+
+    
+
+
+  </div>
+
+  <br style="clear:both;" />
+
+
+
+  <br style="clear:both;" />
+  <div class="text-center">
+    <h4>
+      <strong><a class="section-links" href="/mentors">See more Awesome Mentors</a></strong>
+    </h4>
+    <span class="glyphicon glyphicon-chevron-right glyphicon-white"></span>
+  </div>
+  <br style="clear:both;" />
+  <br style="clear:both;" />
+
+</section>
+
+
+<section class="student_section">
+
+  <div class="arrow-down-blue"></div>
+
+
+  <div class="col-xs-10 col-xs-offset-1 cold-md-10 font-black text-center">
+
+    <br/>
+
+    <h3>Join hundreds of students from these amazing places to learn real-world development</h3>
+
+    <br/>
+    <br/>
+  
+
+    <div class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0 text-center"> 
+
+      <img alt="Brown" class="logos image-grey mobile-full-width" src="/assets/brown-34a2e5c5bc9766104770ab828aba5952.jpeg" />
+      <img alt="Indiegogo" class="logos image-grey mobile-full-width" src="/assets/indiegogo-ab746bbded3859f75752f5243f530dff.png" />
+      <img alt="Babson" class="logos image-grey mobile-full-width" src="/assets/babson-8b0f1dfa2a64be5d000c51c661b6e8c5.png" />
+      <img alt="Saleforce" class="logos image-grey mobile-full-width" src="/assets/saleforce-e5a52b3c168ab7608d09826dddcfa2a7.png" />
+
+      <img alt="Bu" class="logos image-grey mobile-full-width" src="/assets/bu-4dbeea798011d0b8cfe1913a21cfcd6c.jpg" />
+      <img alt="Crocs" class="logos image-grey mobile-full-width" src="/assets/crocs-ae05007ec9a753b33c37c6804d7a3017.png" />
+
+      <img alt="Risd" class="logos image-grey mobile-full-width" src="/assets/risd-a08d9e5321ed0c5dd551044eb0ab3b92.gif" />
+      <img alt="Loreal" class="logos image-grey mobile-full-width" src="/assets/loreal-01184625ac8ed915b7247e844f35fd16.png" />
+
+      <img alt="Cm" class="logos image-grey mobile-full-width" src="/assets/cm-0d32095c933e10da0935993d27a9972d.gif" />
+      <img alt="Adobe" class="logos image-grey mobile-full-width" src="/assets/adobe-ab00a2181cfbc653b59573cd941b84a9.png" />
+
+    </div>
+  </div>
+
+  <br/>
+  
+  <br style="clear:both;" />
+  <br/>
+  <br/>
+
+</section>
+
+
+<section class="skill_3">
+
+  <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3 font spacing text-center">
+
+    <br /><br />
+    <h1>On Your Time</h1>
+    <h4>And Completely Online</h4>
+    <br/>
+    <br/>
+
+    <div class="col-xs-12 col-sm-6">
+      <img alt="Yellow logo" src="/assets/yellow-logo-6e4734854ccbc0d0aada637a8d276a0c.png" style="height:50px;" />
+
+      <h3>Firehose Intro</h3><br />
+      <h4>Go from 0 MPH to 20 MPH. Launch your own website, write Ruby code and solve coding challenges that screen out many programmers before the first job interview. Get your code reviewed by our mentor team and start working on your coding fundamentals.</h4>
+      <br/>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-6">
+      <img alt="Logo 70x100" src="/assets/logo_70x100-4f294ed228b81e1daa45977c240db3ec.png" style="height:50px;" />
+
+      <h3>Firehose Core</h3><br />
+      <h4>Real world coding to accelerate your skills from 20 MPH to 120 MPH. You build advanced web applications, create complex algorithms, use Test Driven Development and work on a group project, all while being under the wing of a world-class mentor. </h4>
+    </div>
+
+
+
+    <br style="clear:both;"/>
+    <br style="clear:both;"/>
+    <br/>
+
+    <h4><strong><a class="section-links" href="/curriculum">Learn more about the Curriculum &amp; Pricing</a></strong></h4><span class="glyphicon glyphicon-chevron-right glyphicon-white"></span>
+    <br style="clear:both;" />
+    <br style="clear:both;" />
+
+  </div>
+
+  <br style="clear:both;" />    
+
+</section>
+
+
+<section class="sign_up_section">
+
+  <div class="arrow-down-lavender"></div>
+
+
+
+  <div class="col-xs-12 col-xs-offset- col-sm-10 col-sm-offset-1 font text-center sign-up-for-prework">
+
+    <br/>
+    <br/>
+
+    <h2>Start your coding journey with the first 2 weeks free.</h2>
+
+    <br/>
+    <br/>
+
+    <div class="mobile-center">
+	<form accept-charset="UTF-8" action="/opt-ins" class="simple_form valid" id="opt-in-form" method="post" novalidate="novalidate"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="d0Y0K7vL8SD6Xnh+bA/5ca+wB85z4BtYj9y0E30POKU=" /></div>
+
+	<div class="col-xs-10 col-xs-offset-1">
+		<div class="col-xs-12 col-md-6 email-field" >
+			<div class="input email required opt_in_email"><input class="string email required form-control" id="opt_in_email" name="opt_in[email]" placeholder="codehero@gmail.com" style="height: 55px;font-size: 16px; font-family: &quot;Helvetica Neue&quot;, Helvetica; font-weight:200; border-radius:0;" type="email" /></div>
+		</div>
+		<div class="col-xs-12 col-md-3 text-center" id="sub">
+			<input class="btn-marketing" id="opt-in-submit" name="commit" type="submit" value="Get Started" />
+		</div>
+	</div>
+</form></div>
+
+    <br/>
+    <br/>
+
+  </div>
+
+  <br style="clear:both;" />
+
+</section>
+
+</section>
+
+
+
+
+<script>
+  $(function(){
+
+    $('.card-wrapper').click(function(wrapper) {
+      window.location = "/mentors?mentor=" + $(wrapper.target).parent("div").data("id");
+    });
+
+        $("#typed").typed({
+            strings: ["Career Changers", "Entrepreneurs", "Coders", "Awesome People", "Web Developers"],
+            typeSpeed: 80, // typing speed
+            backSpeed: 50, // backspacing speed
+            startDelay: 1500, // time before typing starts
+            backDelay: 1000, // pause before backspacing
+            loop: false,
+            // defaults to false for infinite loop
+            loopCount: false,
+        });
+
+    });
+</script>
+
+    </div>
+
+      <!--  Google Analytics Tracking Pixel -->
+      <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49340848-1', 'thefirehoseproject.com');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+    <!-- Don't show hellobar if user is signed in or if on applicants pages -->
+      <script src="//my.hellobar.com/4cd7d447df4a8d039f64b6820d3243cdc9a718b7.js" type="text/javascript" charset="utf-8" async="async"></script>
+
+  </body>
+</html>
