@@ -39,9 +39,13 @@
             %h4= link_to post.og_title, post.og_url
             %p= post.og_description
     %hr
-    %p= post.created_at
-    - if post.user.present?
-      %small= post.user.email
+    .row
+      .col-sm-1.col-xs-12
+        =link_to image_tag(post.user.gravatar_url(default: "retro", size: 50), alt: post.user.name, class: "gravatar pull-left"), user_path(post.user)
+      .col-sm-10.col-xs-12
+        %p= post.created_at
+        - if post.user.present?
+          %small= post.user.email
         
       
 

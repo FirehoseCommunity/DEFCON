@@ -67,3 +67,5 @@ gem 'fakeweb'
 gem 'pagedown-bootstrap-rails'
 
 gem "font-awesome-rails"
+
+gem 'gravtastic'
