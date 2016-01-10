@@ -44,4 +44,16 @@ class UserTest < ActiveSupport::TestCase
     user3 = FactoryGirl.create(:user, post_notification: false)
     assert_equal 2, User.all.users_to_notify.count
   end
+
+  test "will find user when searching" do
+    user = FactoryGirl.create(:user)
+    results = User.search("Rob")
+    assert_equal "Robert Sapunarich", results.first.name
+  end
+
+  test "will not find user when searching for non-existant user name or email" do
+    user = FactoryGirl.create(:user)
+    results = User.search("fail")
+    assert_nil results.first
+  end
 end
