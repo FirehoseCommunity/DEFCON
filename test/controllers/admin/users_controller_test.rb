@@ -36,4 +36,38 @@ class Admin::UsersControllerTest < ActionController::TestCase
     refute user.admin?
     assert_redirected_to root_path
   end
+
+  test "search will return user with valid search term" do
+    admin = FactoryGirl.create(:user, admin: true)
+    user = FactoryGirl.create(:user, name: "Pizza the Hutt")
+    sign_in admin
+    # search for name
+    get :index, term: admin.name, format: :json
+    body = JSON.parse(response.body)
+    # should currently be two users with this factory name
+    assert_equal 1, body.size
+    assert_equal body.first["name"], admin.name
+  end
+
+  test "search will return multiple users that match search term" do
+    admin = FactoryGirl.create(:user, admin: true) #default name Robert
+    user = FactoryGirl.create(:user, name: "Robin Hood")
+    sign_in admin
+    # search for name
+    get :index, term: "Rob", format: :json
+    body = JSON.parse(response.body)
+    # should have two users that match
+    assert_equal 2, body.size
+    assert_match (/Rob/), body.first["name"]
+    assert_match (/Rob/), body.last["name"]
+  end
+
+  test "search will return no users with invalid search term" do
+    admin = FactoryGirl.create(:user, admin: true)
+    user = FactoryGirl.create(:user)
+    sign_in admin
+    # search for bad term
+    get :index, term: "lolCatz", format: :json
+    assert_empty JSON.parse(response.body)
+  end
 end

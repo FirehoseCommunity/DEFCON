@@ -69,3 +69,5 @@ gem 'pagedown-bootstrap-rails'
 gem "font-awesome-rails"
 
 gem 'gravtastic'
+
+gem 'jquery-ui-rails'
