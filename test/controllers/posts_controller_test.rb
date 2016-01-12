@@ -36,12 +36,22 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "send new post notification" do
-    assert_difference 'ActionMailer::Base.deliveries.size', +1 do
+  test "send new post notifications" do
+    assert_difference 'ActionMailer::Base.deliveries.size', +2 do
+      @user1 = FactoryGirl.create(:user)
+      @user2 = FactoryGirl.create(:user)
+      @user3 = FactoryGirl.create(:user, post_notification: false)
       post = FactoryGirl.create(:post)
     end
     notification = ActionMailer::Base.deliveries.last
+    # assert_equal @user.email, notification.to[0]
     assert_match(/A new post/, notification.subject)
   end
 
+  test "notification turned off" do
+    assert_no_difference 'ActionMailer::Base.deliveries.size' do
+      @user = FactoryGirl.create(:user, post_notification: false)
+      post = FactoryGirl.create(:post)
+    end
+  end
 end

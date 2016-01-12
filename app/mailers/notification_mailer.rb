@@ -1,9 +1,10 @@
 class NotificationMailer < ActionMailer::Base
-  default to: Proc.new { User.where(post_notification: true).pluck(:email) },
-          from: "noreply@firehose-defcon.com"
+  default from: "noreply@firehose-defcon.com"
 
-  def send_notification(user)
-    @user = user
-    mail(subject: "A new post from #{@user.email} has been added to the Defcon Student Group")
+  def send_notification(new_post, recipient)
+    @new_post = new_post
+    @recipient = recipient
+    mail(to: @recipient.email,
+         subject: "A new post from #{@new_post.user.email} has been added to the Defcon Student Group")
   end
 end

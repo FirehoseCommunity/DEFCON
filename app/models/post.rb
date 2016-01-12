@@ -31,6 +31,11 @@ class Post < ActiveRecord::Base
     end
 
     def new_post_notification
-      NotificationMailer.send_notification(self.user).deliver
+      @recipients = User.where("post_notification = ? AND email != ?", true, self.user.email)
+      unless @recipients.empty?
+        @recipients.each do |recipient|
+          NotificationMailer.send_notification(self, recipient).deliver
+        end
+      end
     end
 end
