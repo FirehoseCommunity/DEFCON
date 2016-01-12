@@ -5,22 +5,29 @@
       %h5
         .post-show-poster-name
           %i= @post.user.name
-    .col-sm-8.col-xs-12.post-show-title
+    .col-sm-6.col-xs-12.post-show-title
       %h1= @post.title
+    .col-sm-4.col-xs-12.posted-time-ago-post-show
+      %p.posted-time-ago
+        Posted
+        = time_ago_in_words(@post.created_at)
+        ago
   %hr
   %p= auto_link(@post.body, :html => { :target => '_blank' }).html_safe
   %br
   %br
   %hr
   - if @post.og_title.present?
-    %h3 Referenced Link:
-    %br
-    = link_to image_tag(@post.og_image, class: "img-responsive"), @post.og_url
-    %br
-    %br
-    %h4= link_to @post.og_title, @post.og_url
-    %p=@post.og_description
-  %br
+    .row
+      .col-xs-12
+        %h3 Referenced Link:
+        %br
+        = link_to image_tag(@post.og_image, class: "img-responsive pull-left"), @post.og_url
+        %br
+      .col-xs-12
+        %br
+        %h4= link_to @post.og_title, @post.og_url
+        %p=@post.og_description
 
 .col-xs-10.col-xs-offset-1
   %h1.pull-left Comments
