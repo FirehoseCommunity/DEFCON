@@ -11,7 +11,7 @@ class PostsControllerTest < ActionController::TestCase
     u = FactoryGirl.create(:user)
     sign_in u
     get :index
-    assert_response :success      
+    assert_response :success
   end
 
   test "make a post" do
@@ -25,7 +25,7 @@ class PostsControllerTest < ActionController::TestCase
         }
       }
     end
-    assert_redirected_to posts_path      
+    assert_redirected_to posts_path
   end
 
   test "show post page" do
@@ -35,5 +35,13 @@ class PostsControllerTest < ActionController::TestCase
     get :show, id: p.id
     assert_response :success
   end
-  
+
+  test "send new post notification" do
+    assert_difference 'ActionMailer::Base.deliveries.size', +1 do
+      post = FactoryGirl.create(:post)
+    end
+    notification = ActionMailer::Base.deliveries.last
+    assert_match(/A new post/, notification.subject)
+  end
+
 end
