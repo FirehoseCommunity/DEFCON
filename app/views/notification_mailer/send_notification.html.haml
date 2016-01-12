@@ -1,5 +1,10 @@
-%p Hey There!
+%p Hey #{@recipient.name}!
 
 %p
-  #{@new_post.user.email}
-  %b shared a post with theFirehoseProject Student Group
+  #{@new_post.user.name}
+  %b shared a post with theFirehoseProject Student Group:
+
+%h2 #{@new_post.title}
+%p= truncate(@new_post.body, length: 100)
+
+=link_to "Continue reading", "#"
