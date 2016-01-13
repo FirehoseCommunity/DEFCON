@@ -71,3 +71,7 @@ gem "font-awesome-rails"
 gem 'gravtastic'
 
 gem 'jquery-ui-rails'
+
+group :test, :development do
+  gem 'pry-byebug'
+end

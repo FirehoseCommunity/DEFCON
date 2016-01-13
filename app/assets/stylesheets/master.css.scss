@@ -95,3 +95,14 @@ body {
 body {
   color: black;
 }
+
+.posted-time-ago {
+  @media (min-width: 768px) {
+    float: right;
+    padding-top: 15px;
+  }
+  @media (max-width: 768px) {
+    padding-top: 5px;
+    margin-bottom: -10px;
+  }
+}

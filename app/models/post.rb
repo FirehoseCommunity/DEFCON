@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments
   after_save :parse_og_data_from_first_link # any time we create/update a post, re-grab og data
+  after_create :new_post_notification
+
 
   private
     def parse_og_data_from_first_link
@@ -26,5 +28,14 @@ class Post < ActiveRecord::Base
       # adds http or https to links if they are not present so OG parser works
       return "http://#{url}" unless url[/^https?:\/\//] || url[/^http?:\/\//]
       url
+    end
+
+    def new_post_notification
+      @recipients = User.where("post_notification = ? AND email != ?", true, self.user.email)
+      unless @recipients.empty?
+        @recipients.each do |recipient|
+          NotificationMailer.send_notification(self, recipient).deliver
+        end
+      end
     end
 end
