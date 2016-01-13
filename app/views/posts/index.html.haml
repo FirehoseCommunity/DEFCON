@@ -38,7 +38,9 @@
     %hr
     .row
       .col-sm-6.col-xs-12
-        %p=  auto_link(truncate(post.body, length: 250), :html => { :target => '_blank' })
+        .wmd-output><
+          :preserve
+            #{auto_link(truncate(post.body, length: 250), :html => { :target => '_blank' })}
       .col-sm-6.col-xs-12
         - if post.og_title.present?
           %hr.visible-xs
