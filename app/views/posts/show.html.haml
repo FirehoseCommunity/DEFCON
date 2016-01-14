@@ -13,11 +13,11 @@
         = time_ago_in_words(@post.created_at)
         ago
   %hr
-  %p= auto_link(@post.body, :html => { :target => '_blank' }).html_safe
-  %br
-  %br
-  %hr
+  .wmd-output><
+    :preserve
+      #{auto_link(@post.body, :html => { :target => '_blank' }).html_safe}
   - if @post.og_title.present?
+    %hr
     .row
       .col-xs-12
         %h3 Referenced Link:
@@ -28,41 +28,43 @@
         %br
         %h4= link_to @post.og_title, @post.og_url
         %p=@post.og_description
-
-.col-xs-10.col-xs-offset-1
-  %h1.pull-left Comments
-  
-
-.booyah-box.col-xs-10.col-xs-offset-1 
-  / Button trigger modal
-  %button.btn.btn-success.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal"}
-    Add a comment
-  / Modal
-  #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-    .modal-dialog
-      .modal-content
-        .modal-header
-          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
-          %h4#myModalLabel.modal-title Add a comment
-          .modal-body
-            = simple_form_for @comment, :url => post_comments_path(@post) do |f|
-              =f.input :message, as: :pagedown, input_html: { preview: true, rows: 10 }
-              %br/
-              .modal-footer
-                %button.btn.btn-default{"data-dismiss" => "modal", :type => "button", class: 'pull-left'} Close
-                =f.submit 'Create', class: 'btn btn-primary pull-right'
-          
-            
-.booyah-box.col-xs-10.col-xs-offset-1
-  %h1 Comments
-  - @post.comments.each do |comment|
-    %blockquote
-      \#{comment.message}
-      %small= comment.user.email
-      - if current_user && current_user.can_edit?(comment)
-        = link_to 'Destroy', comment_path(comment), :method => :delete, :class => 'btn btn-xs btn-primary pull-right'
-        %br/
-        = link_to 'Edit', edit_comment_path(comment), :class => 'btn btn-xs btn-primary pull-right'
-  .clr 
-    
-  
+  %hr
+  .row
+    .col-sm-6.col-xs-12
+      %h1 Comments
+      %small
+        &nbsp&nbsp Comment Count:
+        =@post.comments.count
+    .col-sm-6.col-xs-12
+      / Button trigger modal
+      %button.add-comment-button.btn.btn-success.btn-lg{"data-target" => "#myModal", "data-toggle" => "modal"}
+        Add a comment
+      / Modal
+      #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+        .modal-dialog
+          .modal-content
+            .modal-header
+              %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
+              %h4#myModalLabel.modal-title Add a comment
+              .modal-body
+                = simple_form_for @comment, :url => post_comments_path(@post) do |f|
+                  =f.input :message, as: :pagedown, input_html: { preview: true, rows: 10 }
+                  %br/
+                  .modal-footer
+                    %button.btn.btn-default{"data-dismiss" => "modal", :type => "button", class: 'pull-left'} Close
+                    =f.submit 'Create', class: 'btn btn-primary pull-right'
+  %br
+  .row
+    .col-xs-10.col-xs-offset-1
+      - @post.comments.each do |comment|
+        %blockquote
+          .wmd-output><
+            :preserve
+              #{comment.message}
+          %small= comment.user.email
+          - if current_user && current_user.can_edit?(comment)
+            %br
+            = link_to 'Edit', edit_comment_path(comment), :class => 'btn btn-sm btn-primary'
+            &nbsp
+            = link_to 'Delete', comment_path(comment), :method => :delete, :class => 'btn btn-sm btn-danger'
+      .clr
