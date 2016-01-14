@@ -1,5 +1,14 @@
 / index.html.haml 20160107 Admin Users Index page ~AMP
+:javascript
+  $(function() {
+    new Users;
+  });
 
+.users-search.text-center
+  %input#users-search-txt{:autofocus => "", :type => "text"}
+    #users-search-results.results
+
+%br
 - @users.each do |u|
   .booyah-box.col-xs-10.col-xs-offset-1
     = link_to u.email, edit_admin_user_path(u)

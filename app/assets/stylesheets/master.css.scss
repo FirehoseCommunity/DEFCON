@@ -1,4 +1,3 @@
-  
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -17,7 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .clear {
-    clear: both;
+  clear: both;
 }
 
 body {
@@ -39,7 +38,7 @@ body {
 }
 
 .hero {
-   background: url('Hero.jpg') no-repeat center center fixed;
+  background: url('Hero.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -49,7 +48,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, .navbar {
-	margin:0;
+  margin:0;
 }
 
 .frosty {
@@ -70,8 +69,8 @@ h1, h2, h3, h4, h5, h6, .navbar {
 }
 
 .img-responsive {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 body {
@@ -84,6 +83,26 @@ body {
   border-radius:0;
 }
 
+.add-comment-button {
+  @media (min-width: 768px) {
+    float: right;
+  }
+  @media (max-width: 768px) {
+    margin-top: 15px;
+  }
+}
+
 body {
   color: black;
+}
+
+.posted-time-ago {
+  @media (min-width: 768px) {
+    float: right;
+    padding-top: 15px;
+  }
+  @media (max-width: 768px) {
+    padding-top: 5px;
+    margin-bottom: -10px;
+  }
 }
