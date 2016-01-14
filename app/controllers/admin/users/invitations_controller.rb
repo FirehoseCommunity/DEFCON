@@ -1,4 +1,4 @@
-class Users::InvitationsController < Devise::InvitationsController
+class Admin::Users::InvitationsController < Devise::InvitationsController
   before_action :check_if_admin
 
   private
