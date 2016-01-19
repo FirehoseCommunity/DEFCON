@@ -60,6 +60,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
   font-family: "Helvetica Neue", Helvetica;
   font-weight: 100;
   text-shadow: rgba(0,0,0,0.95) 1px 1px;
+  white-space: normal;
 }
 
 .frosty h2 {
@@ -81,6 +82,7 @@ body {
 
 .btn {
   border-radius:0;
+  white-space: normal;
 }
 
 .add-comment-button {
