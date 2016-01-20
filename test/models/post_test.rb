@@ -10,7 +10,7 @@ class PostTest < ActiveSupport::TestCase
   end
 
   test "grabs opengraph data from site url" do
-    FakeWeb.register_uri(:any, 'http://www.thefirehoseproject.com', :response => File.join('test/fixtures/og_response.http'))    
+    FakeWeb.register_uri(:any, 'http://www.thefirehoseproject.com', :response => File.join('test/fixtures/og_response.http'))
     # will need to update this in the future if the og metadata tags on the site change
     # currently a helper method tacks on http to the url, maybe test that separately?
     post = FactoryGirl.create(:post, body: "How about www.thefirehoseproject.com?")
@@ -20,5 +20,15 @@ class PostTest < ActiveSupport::TestCase
     "and be ready to switch careers into web development or launch your "\
     "own idea.", post.og_description
     assert_equal "http://www.thefirehoseproject.com/assets/meta-tag-coder.png", post.og_image
+  end
+
+  test "should not save post without title" do
+    post = FactoryGirl.create(:post, title: "")
+    assert_not post.valid?
+  end
+
+  test "should not save post without body" do
+    post = FactoryGirl.create(:post, body: "")
+    assert_not post.valid?
   end
 end
