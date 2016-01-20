@@ -40,7 +40,7 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "create new post notifications" do
+  test "send new post notifications" do
     Sidekiq::Testing.inline!
     @user1 = FactoryGirl.create(:user, email: "ILoveEmailANDCatsButMostlyCats@test.com")
     post = FactoryGirl.create(:post)
