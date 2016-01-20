@@ -18,6 +18,8 @@ View the wireframes for this app [here](https://github.com/FirehoseCommunity/DEF
 
 ## Developer notes
 
+[Firehose Cheat Sheet for working on existing projects](http://www.thefirehoseproject.com/cheat-sheets/working-on-existing-projects)
+
 To use custom Rake tasks:
 * "rake users:admin" without params will add a default "admin@fhpdefcontest.net" with password "awesomesauce"
 * "rake users:admin[youremail,password]" NO SPACES because rake is quirky, will add an explicit admin user with the specified email and password. There is no email format validation here, it's just for seeding the database.
