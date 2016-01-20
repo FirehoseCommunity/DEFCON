@@ -23,12 +23,14 @@ class PostTest < ActiveSupport::TestCase
   end
 
   test "should not save post without title" do
-    post = FactoryGirl.create(:post, title: "")
-    assert_not post.valid?
+    assert_raises ActiveRecord::RecordInvalid do
+      post = FactoryGirl.create(:post, title: "")
+    end
   end
 
   test "should not save post without body" do
-    post = FactoryGirl.create(:post, body: "")
-    assert_not post.valid?
+    assert_raises ActiveRecord::RecordInvalid do
+      post = FactoryGirl.create(:post, body: "")
+    end
   end
 end
