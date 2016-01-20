@@ -2,6 +2,10 @@ require 'test_helper'
 
 class PostsControllerTest < ActionController::TestCase
 
+  def setup
+    Sidekiq::Testing.fake!
+  end
+
   test "require user sign_in before viewing posts" do
     get :index
     assert_redirected_to new_user_session_path
@@ -36,21 +40,26 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "send new post notifications" do
-    assert_difference 'ActionMailer::Base.deliveries.size', +2 do
-      @user1 = FactoryGirl.create(:user)
-      @user2 = FactoryGirl.create(:user)
-      @user3 = FactoryGirl.create(:user, post_notification: false)
-      post = FactoryGirl.create(:post)
-    end
+  test "create new post notifications" do
+    Sidekiq::Testing.inline!
+    @user1 = FactoryGirl.create(:user, email: "ILoveEmailANDCatsButMostlyCats@test.com")
+    post = FactoryGirl.create(:post)
     notification = ActionMailer::Base.deliveries.last
-    # assert_equal @user.email, notification.to[0]
     assert_match(/A new post/, notification.subject)
+    assert_equal(@user1.email.downcase, notification.to[0].to_s)
   end
 
-  test "notification turned off" do
-    assert_no_difference 'ActionMailer::Base.deliveries.size' do
+  test "notification turned off doesn't enqueue email" do
+    assert_no_difference 'Sidekiq::Extensions::DelayedMailer.jobs.size' do
       @user = FactoryGirl.create(:user, post_notification: false)
+      post = FactoryGirl.create(:post)
+    end
+  end
+
+  test 'emails are enqueued to be delivered later on post' do
+    @user1 = FactoryGirl.create(:user)
+    @user2 = FactoryGirl.create(:user)
+    assert_difference 'Sidekiq::Extensions::DelayedMailer.jobs.size', +2 do
       post = FactoryGirl.create(:post)
     end
   end
