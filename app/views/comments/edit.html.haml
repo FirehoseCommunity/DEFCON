@@ -1,6 +1,6 @@
 .booyah-box.col-xs-10.col-xs-offset-1
   %h1 Edit Your Comment
   = simple_form_for @comment do |f|
-    = f.input :message
+    = f.input :message, as: :pagedown, input_html: { preview: true, rows: 10 }
     %br/
     = f.submit 'Update', :class => 'btn btn-primary'

@@ -1,5 +1,7 @@
-=simple_form_for @post do |f|
-  =f.input :title
-  =f.input :body
-  %br/
-  =f.submit 'Update', :class => 'btn btn-primary'
+.booyah-box.col-xs-10.col-xs-offset-1
+  %h1 Edit Your Post
+  = simple_form_for @post do |f|
+    =f.input :title
+    = f.input :body, as: :pagedown, input_html: { preview: true, rows: 10 }
+    %br/
+    = f.submit 'Update', :class => 'btn btn-primary'
