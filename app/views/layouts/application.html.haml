@@ -29,6 +29,23 @@
           %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               %li= link_to 'My Profile', user_path(current_user)
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Dropdown
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} Action
+                  %li
+                    %a{:href => "#"} Another action
+                  %li
+                    %a{:href => "#"} Something else here
+                  %li.divider
+                  %li
+                    %a{:href => "#"} Separated link
+                  %li.divider
+                  %li
+                    %a{:href => "#"} One more separated link
               %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
             - else
               %li= link_to 'Sign in', new_user_session_path
@@ -45,3 +62,6 @@
       //   = link_to  'Sign out', destroy_user_session_path, :method => :delete
     / %hr
     = yield
+    
+    
+    
