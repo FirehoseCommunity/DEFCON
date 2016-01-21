@@ -44,6 +44,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    concurrent-ruby (1.0.0)
+    connection_pool (2.2.0)
     devise (3.5.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -124,6 +126,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    redis (3.2.2)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
     sass (3.4.19)
@@ -134,6 +137,10 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sidekiq (4.0.2)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      redis (~> 3.2, >= 3.2.1)
     simple_form (3.2.0)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -189,6 +196,7 @@ DEPENDENCIES
   rails_autolink
   sass-rails
   sdoc
+  sidekiq
   simple_form
   sprockets (= 2.11.0)
   twitter-text
