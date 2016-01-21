@@ -14,8 +14,11 @@ View the wireframes for this app [here](https://github.com/FirehoseCommunity/DEF
 * Cecelia Havens
 * Amanda Mark
 * Jeff Gerlach
+* Justin Dizon
 
 ## Developer notes
+
+[Firehose Cheat Sheet for working on existing projects](http://www.thefirehoseproject.com/cheat-sheets/working-on-existing-projects)
 
 To use custom Rake tasks:
 * "rake users:admin" without params will add a default "admin@fhpdefcontest.net" with password "awesomesauce"

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Gravtastic
+  gravtastic
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :invitable, :database_authenticatable,
@@ -18,4 +20,8 @@ class User < ActiveRecord::Base
     self.admin? ? user.update(:admin => true) : false
   end
 
+  def self.search(term)
+    # could use ILIKE since we're using postgres to drop downcase
+    where('LOWER(email) LIKE :term OR LOWER(name) LIKE :term', term: "%#{term.downcase}%")
+  end
 end 
