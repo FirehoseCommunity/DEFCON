@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery-ui/autocomplete
+//= require jquery_validate
 //= require bootstrap-sprockets
 //= require pagedown_bootstrap
 //= require pagedown_init
