@@ -12,8 +12,8 @@ class VotesControllerTest < ActionController::TestCase
     post = FactoryGirl.create(:post, user: user)
     user2 = FactoryGirl.create(:user)
     sign_in user2
-    get :index
-    # post :create
+    # get :index
+    post :create
     # assert_difference 'post.votes.count' do
     #   # post :create
     #   # post :create, :user_id => user2.id, :votable_id => post.id, :votable_type => 'Post'
