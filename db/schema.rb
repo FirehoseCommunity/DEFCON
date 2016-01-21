@@ -55,9 +55,6 @@ ActiveRecord::Schema.define(version: 20160114211510) do
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
     t.boolean  "admin",                  default: false
-    t.boolean  "post_notification",      default: true
-    t.boolean  "comment_notification",   default: true
-    t.string   "name",                   default: "I Am Awesome"
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -66,6 +63,9 @@ ActiveRecord::Schema.define(version: 20160114211510) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+    t.boolean  "post_notification",      default: true
+    t.boolean  "comment_notification",   default: true
+    t.string   "name",                   default: "I Am Awesome"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
