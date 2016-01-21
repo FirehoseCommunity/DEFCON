@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   devise :invitable, :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
   has_many :posts
   has_many :comments 
   validates :name, presence: { :message => "Name is required!" }
@@ -12,12 +11,11 @@ class User < ActiveRecord::Base
 
   def can_edit?(p)
       return false if p.blank?
-
       p.user_id == self.id 
   end
 
   def promote(user)
-    self.admin ? user.update(:admin => true) : false
+    self.admin? ? user.update(:admin => true) : false
   end
 
 end 
