@@ -13,6 +13,7 @@ Defcon::Application.routes.draw do
   namespace :admin do
     resources :users
   end
+  resources :votes
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
