@@ -21,16 +21,4 @@ class PostTest < ActiveSupport::TestCase
     "own idea.", post.og_description
     assert_equal "http://www.thefirehoseproject.com/assets/meta-tag-coder.png", post.og_image
   end
-
-  test "should not save post without title" do
-    assert_raises ActiveRecord::RecordInvalid do
-      post = FactoryGirl.create(:post, title: "")
-    end
-  end
-
-  test "should not save post without body" do
-    assert_raises ActiveRecord::RecordInvalid do
-      post = FactoryGirl.create(:post, body: "")
-    end
-  end
 end
