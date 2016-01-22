@@ -7,14 +7,5 @@ $(function() {
 });
 
 $(document).ready(function () {
-  $('#new_post').validate({
-    rules: {
-      post_title: {
-        required: true
-      },
-      post_body: {
-        required: true
-      }
-    }
-  });
+    $('#new_post').validate();
 });
