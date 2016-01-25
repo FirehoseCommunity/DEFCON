@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '4.2.0'
+
+gem 'web-console', '~> 2.0'
+
+gem 'responders', '~> 2.0'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -26,7 +30,6 @@ gem 'jbuilder', '~> 1.2'
 
 # Include Twitter Bootstrap
 gem 'bootstrap-sass', '3.3.5.1'
-
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -62,7 +65,9 @@ gem "opengraph_parser"
 
 gem "twitter-text"
 
-gem 'fakeweb'
+group :test do
+  gem 'fakeweb'
+end
 
 gem 'pagedown-bootstrap-rails'
 
@@ -76,4 +81,4 @@ group :test, :development do
   gem 'pry-byebug'
 end
 
-gem 'sidekiq'
+gem 'sucker_punch'

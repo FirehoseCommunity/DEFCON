@@ -34,7 +34,7 @@ class Post < ActiveRecord::Base
       @recipients = User.where("post_notification = ? AND email != ?", true, self.user.email)
       unless @recipients.empty?
         @recipients.each do |recipient|
-          NotificationMailer.delay.send_notification(self.id, recipient.id)
+          NotificationMailer.send_notification(self.id, recipient.id).deliver_later
         end
       end
     end

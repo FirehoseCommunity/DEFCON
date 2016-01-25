@@ -113,8 +113,8 @@ test "edit not logged in" do
     comment = FactoryGirl.create(:comment, :message => 'stackcats')
     sign_in comment.user
     put :update, :id => comment.id, :comment => {:message => 'tacocat'}
-    assert_redirected_to post_path(comment)
     assert_equal 'tacocat', comment.reload.message
+    assert_redirected_to post_path(comment.post)
   end
   
   test "update not found" do
