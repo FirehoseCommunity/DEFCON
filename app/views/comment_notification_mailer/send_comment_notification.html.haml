@@ -1,0 +1,9 @@
+%p Hey #{@recipient.name}!
+
+%p
+  #{@new_comment.user.name}
+  %b added a comment on the post "#{@comment_post.title}" with theFirehoseProject Student Group:
+
+%p= truncate(@new_comment.message, length: 100)
+
+=link_to "Continue reading", post_path(@comment_post)
