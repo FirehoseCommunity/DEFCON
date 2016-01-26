@@ -27,3 +27,6 @@ To use custom Rake tasks:
 * "rake users:user[email,password]" will add the explicit user.
 * Can pass just an email to have password default to "awesomesauce"
 
+If you're using Vagrant for your development environment start the server by running
+`rails s -b 0.0.0.0`
+instead of `rails server`.
