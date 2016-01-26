@@ -126,8 +126,10 @@ test "edit not logged in" do
 
   test "send new comment notifications to post owner" do
     post = FactoryGirl.create(:post)
-    clear_enqueued_jobs
     user1 = FactoryGirl.create(:user)
+    user2 = FactoryGirl.create(:user, post_interaction_notification: false)
+    comment2 = FactoryGirl.create(:comment, post: post, user: user2)
+    clear_enqueued_jobs
     sign_in user1
     perform_enqueued_jobs do
       assert_difference 'ActionMailer::Base.deliveries.size', +1 do
@@ -144,7 +146,9 @@ test "edit not logged in" do
     poster = FactoryGirl.create(:user)
     post = FactoryGirl.create(:post, user: poster)
     user1 = FactoryGirl.create(:user)
-    comment = FactoryGirl.create(:comment, post: post, user: user1)
+    comment1 = FactoryGirl.create(:comment, post: post, user: user1)
+    user2 = FactoryGirl.create(:user, post_interaction_notification: false)
+    comment2 = FactoryGirl.create(:comment, post: post, user: user2)
     clear_enqueued_jobs
     sign_in poster
     perform_enqueued_jobs do
