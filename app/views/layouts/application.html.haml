@@ -31,21 +31,20 @@
               %li= link_to 'My Profile', user_path(current_user)
               %li.dropdown
                 %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-                  Dropdown
+                  #{current_user.email}
                   %b.caret
                 %ul.dropdown-menu
                   %li
-                    %a{:href => "#"} Action
+                    %ul.dropdown-menu
                   %li
-                    %a{:href => "#"} Another action
+                    %a{:href => user_path(current_user)} My Profile
                   %li
-                    %a{:href => "#"} Something else here
+                    %a{:href => "#"} Sign out
+                  %li
+                    %a{:href => new_user_session_path} Sign in 
                   %li.divider
                   %li
                     %a{:href => "#"} Separated link
-                  %li.divider
-                  %li
-                    %a{:href => "#"} One more separated link
               %li= link_to 'Sign out', destroy_user_session_path, :method => :delete
             - else
               %li= link_to 'Sign in', new_user_session_path
