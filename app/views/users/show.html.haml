@@ -20,7 +20,9 @@
         %li Notify For New Posts
       - if selected_user.comment_notification?
         %li Notify For New Comments On Your Posts
-      - unless selected_user.post_notification? || selected_user.comment_notification?
+      - if selected_user.post_interaction_notification?
+        %li Notify For New Comments On Posts You Comment On
+      - unless selected_user.post_notification? || selected_user.comment_notification? || selected_user.post_interaction_notification?
         %li Do Not Notify About New Posts Or Comments
     %br
     =link_to 'Update Info', edit_user_path(selected_user), :class => 'btn btn-primary btn-large'

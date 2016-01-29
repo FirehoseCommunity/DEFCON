@@ -66,5 +66,5 @@
             %br
             = link_to 'Edit', edit_comment_path(comment), :class => 'btn btn-sm btn-primary'
             &nbsp
-            = link_to 'Delete', comment_path(comment), :method => :delete, :class => 'btn btn-sm btn-danger'
+            = link_to 'Delete', comment_path(comment), :method => :delete, :data => { :confirm => 'Are you sure you want to delete?'}, :class => 'btn btn-sm btn-danger'
       .clr

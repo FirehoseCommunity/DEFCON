@@ -9,6 +9,7 @@
       = f.input :name, autofocus: true
       = f.input :post_notification, label: "Notify me about new posts"
       = f.input :comment_notification, label: "Notify me about new comments on my posts"
+      = f.input :post_interaction_notification, label: "Notify me about new comments on posts I commented on"
     .actions
       = f.submit "Update", :class => 'btn btn-primary btn-large'
       = link_to "Cancel", user_path(selected_user), :class => 'btn btn-warning btn-large'

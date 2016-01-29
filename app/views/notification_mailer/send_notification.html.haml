@@ -7,4 +7,4 @@
 %h2 #{@new_post.title}
 %p= truncate(@new_post.body, length: 100)
 
-=link_to "Continue reading", "#"
+=link_to "Continue reading", post_url(@new_post)
