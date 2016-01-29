@@ -5,3 +5,7 @@ $(function() {
     $(this).html(converter.makeHtml(content));
   });
 });
+
+$(document).ready(function () {
+    $('#new_post').validate();
+});

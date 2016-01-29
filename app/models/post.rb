@@ -4,6 +4,8 @@ class Post < ActiveRecord::Base
   has_many :comments
   after_save :parse_og_data_from_first_link # any time we create/update a post, re-grab og data
   after_create :new_post_notification
+  validates :title, presence: true
+  validates :body, presence: true
 
 
   private
