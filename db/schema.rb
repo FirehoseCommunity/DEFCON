@@ -55,17 +55,17 @@ ActiveRecord::Schema.define(version: 20160126044555) do
     t.datetime "created_at",                                                         null: false
     t.datetime "updated_at",                                                         null: false
     t.boolean  "admin",                                     default: false
-    t.boolean  "post_notification",                         default: true
-    t.boolean  "comment_notification",                      default: true
-    t.string   "name",                          limit: 255, default: "I Am Awesome"
-    t.string   "invitation_token"
+    t.string   "invitation_token",              limit: 255
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
     t.datetime "invitation_accepted_at"
     t.integer  "invitation_limit"
     t.integer  "invited_by_id"
-    t.string   "invited_by_type"
+    t.string   "invited_by_type",               limit: 255
     t.integer  "invitations_count",                         default: 0
+    t.boolean  "post_notification",                         default: true
+    t.boolean  "comment_notification",                      default: true
+    t.string   "name",                          limit: 255, default: "I Am Awesome"
     t.boolean  "post_interaction_notification",             default: true
   end
 
@@ -74,5 +74,16 @@ ActiveRecord::Schema.define(version: 20160126044555) do
   add_index "users", ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
   add_index "users", ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "votable_id"
+    t.string   "votable_type", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
+  add_index "votes", ["votable_id", "votable_type"], name: "index_votes_on_votable_id_and_votable_type", using: :btree
 
 end
