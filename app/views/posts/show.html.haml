@@ -12,6 +12,8 @@
         Posted
         = time_ago_in_words(@post.created_at)
         ago
+    - if current_user == @post.user
+      %li= link_to 'Edit Post', edit_post_path(@post), :class => 'btn btn-sm btn-primary pull-right'
   %hr
   .wmd-output><
     :preserve
