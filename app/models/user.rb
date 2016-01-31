@@ -11,7 +11,8 @@ class User < ActiveRecord::Base
   has_many :comments 
   validates :name, presence: { :message => "Name is required!" }
   scope :users_to_notify, -> { where(:post_notification => true)  }
-
+  acts_as_voter
+  
   def can_edit?(p)
       return false if p.blank?
 

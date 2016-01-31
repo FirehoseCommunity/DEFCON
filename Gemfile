@@ -82,3 +82,5 @@ group :test, :development do
 end
 
 gem 'sucker_punch'
+
+gem 'acts_as_votable', '~> 0.10.0'
