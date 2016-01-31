@@ -37,6 +37,11 @@ class PostsController < ApplicationController
   def destroy
   end
 
+  def upvote
+    @post = Post.find(params[:id])
+    self.upvote_by current_user
+  end
+
   private
 
   def post_params
