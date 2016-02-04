@@ -7,6 +7,10 @@ Defcon::Application.routes.draw do
   root 'static_pages#index'
   resources :posts do
     resources :comments, :only => :create
+    member do
+      put "like", to: "posts#upvote"
+      delete "unlike", to: "posts#unvote"
+    end
   end 
   
   resources :comments, :only => [:destroy, :edit, :update]

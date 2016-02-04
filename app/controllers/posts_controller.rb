@@ -39,7 +39,14 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
-    self.upvote_by current_user
+    @post.upvote_by current_user
+    redirect_to posts_path
+  end
+
+  def unvote
+    @post = Post.find(params[:id])
+    @post.unvote_by current_user
+    redirect_to posts_path
   end
 
   private
