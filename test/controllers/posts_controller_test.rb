@@ -51,4 +51,5 @@ class PostsControllerTest < ActionController::TestCase
     delete :unvote, id: p.id
     assert_redirected_to posts_path
   end
+  
 end

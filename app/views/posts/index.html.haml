@@ -57,3 +57,5 @@
         %p= post.created_at.to_formatted_s(:long)
         - if post.user.present?
           %small= post.user.email
+      .col-sm-1.col-xs-12
+        =link_to "Upvote", like_post_path(post), method: :put
