@@ -58,4 +58,7 @@
         - if post.user.present?
           %small= post.user.email
       .col-sm-1.col-xs-12
-        =link_to "Upvote", like_post_path(post), method: :put
+        - if current_user.voted_for? @post
+          =link_to "Upvoted!", unlike_post_path(@post), method: :delete
+        - else
+          =link_to "Upvote!", like_post_path(post), method: :put
