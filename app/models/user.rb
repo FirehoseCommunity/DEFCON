@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
     # could use ILIKE since we're using postgres to drop downcase
     where('LOWER(email) LIKE :term OR LOWER(name) LIKE :term', term: "%#{term.downcase}%")
   end
+
+  def upvoted?(post)
+    voted_up_on? post
+  end
 end 
