@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
     where('LOWER(email) LIKE :term OR LOWER(name) LIKE :term', term: "%#{term.downcase}%")
   end
 
+  # Check if a user voted on a post. Cf. /views/posts/index.html.haml line 63.
   def upvoted?(post)
     voted_up_on? post
   end
