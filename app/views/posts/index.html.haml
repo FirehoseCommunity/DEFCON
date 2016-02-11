@@ -60,7 +60,7 @@
       .col-sm-1.col-xs-12
         %p= "#{post.votes_for.size} ranks of awesomesauce!"
       .col-sm-1.col-xs-12
-        - if current_user.voted_for? post
+        - if current_user.voted_up_on? post
           =link_to "Awesomesauce!", unlike_post_path(post), method: :delete
         - else
           =link_to "Awesomesauce?", like_post_path(post), method: :put

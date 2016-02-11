@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   after_create :new_post_notification
   validates :title, presence: true
   validates :body, presence: true
-  acts_as_votable
+  acts_as_votable # Posts can be upvoted by users.
   
   private
     def parse_og_data_from_first_link
