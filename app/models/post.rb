@@ -7,10 +7,6 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
   acts_as_votable
-
-  def display_votes
-    self.votes_for.size
-  end
   
   private
     def parse_og_data_from_first_link

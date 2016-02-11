@@ -58,7 +58,7 @@
         - if post.user.present?
           %small= post.user.email
       .col-sm-1.col-xs-12
-        %p= "#{post.display_votes} ranks of awesomesauce!"
+        %p= "#{post.votes_for.size} ranks of awesomesauce!"
       .col-sm-1.col-xs-12
         - if current_user.voted_for? post
           =link_to "Awesomesauce!", unlike_post_path(post), method: :delete
