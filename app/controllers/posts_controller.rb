@@ -49,6 +49,10 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
 
+  def display_votes
+    self.get_votes.size
+  end
+
   private
 
   def post_params

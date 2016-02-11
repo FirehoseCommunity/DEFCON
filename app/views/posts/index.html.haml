@@ -53,10 +53,12 @@
     .row
       .col-sm-1.col-xs-12
         =link_to image_tag(post.user.gravatar_url(default: "retro", size: 50), alt: post.user.name, class: "gravatar pull-left"), user_path(post.user)
-      .col-sm-10.col-xs-12
+      .col-sm-9.col-xs-12
         %p= post.created_at.to_formatted_s(:long)
         - if post.user.present?
           %small= post.user.email
+      .col-sm-1.col-xs-12
+        %p= "#{@post.display_votes} humans like this!"
       .col-sm-1.col-xs-12
         - if current_user.voted_for? @post
           =link_to "Upvoted!", unlike_post_path(@post), method: :delete
