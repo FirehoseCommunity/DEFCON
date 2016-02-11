@@ -1,6 +1,6 @@
 Defcon::Application.configure do
 
-  config.action_mailer.default_url_options = { host: 'defcon-firehose.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'firehose-defcon.herokuapp.com' }
 
   config.action_mailer.delivery_method = :smtp
 
