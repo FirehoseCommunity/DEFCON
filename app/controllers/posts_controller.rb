@@ -36,6 +36,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    if current_post.blank?
+      return render_not_found :not_found 
+    else
+      current_post.destroy 
+      redirect_to posts_path
+    end
   end
 
   private
@@ -44,8 +50,9 @@ class PostsController < ApplicationController
     render_not_found :unauthorized unless current_user.admin || current_user.id == current_post.user_id
   end
 
+  helper_method :current_post
   def current_post
-    @current_post ||= Post.find_by_id(params[:id])
+    @current_post ||= Post.find(params[:id])
   end
 
   def post_params

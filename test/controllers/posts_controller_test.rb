@@ -44,7 +44,7 @@ class PostsControllerTest < ActionController::TestCase
 
     delete :destroy, id: post.id
 
-    assert_response :success
+    assert_redirected_to posts_path
   end
 
   test 'user cant destroy others posts' do
@@ -65,7 +65,7 @@ class PostsControllerTest < ActionController::TestCase
 
     delete :destroy, id: post.id
 
-    assert_response :success
+    assert_redirected_to posts_path
   end
 
 
