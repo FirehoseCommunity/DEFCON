@@ -13,7 +13,9 @@
         = time_ago_in_words(@post.created_at)
         ago
     - if current_user == @post.user
-      %li= link_to 'Edit Post', edit_post_path(@post), :class => 'btn btn-sm btn-primary pull-right'
+      = link_to 'Edit Post', edit_post_path(@post), :class => 'btn btn-sm btn-primary pull-right'
+      %br{:style => "clear:both"}/
+      = link_to 'Delete Post', '#', class: 'btn btn-sm btn-danger pull-right', method: :delete
   %hr
   .wmd-output><
     :preserve
