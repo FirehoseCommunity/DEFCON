@@ -46,4 +46,19 @@ class PostTest < ActiveSupport::TestCase
       post = FactoryGirl.create(:post)
     end
   end
+
+  test 'post is upvoted' do
+    post = FactoryGirl.create(:post)
+    user = FactoryGirl.create(:user)
+    post.liked_by user
+    assert_equal(1, post.votes_for.size)
+  end
+
+  test 'post is un-upvoted' do 
+    post = FactoryGirl.create(:post)
+    user = FactoryGirl.create(:user)
+    post.liked_by user
+    post.unliked_by user
+    assert_equal(0, post.votes_for.size)
+  end
 end
