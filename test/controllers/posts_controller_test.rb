@@ -35,4 +35,38 @@ class PostsControllerTest < ActionController::TestCase
     get :show, id: p.id
     assert_response :success
   end
+
+  test 'admin can destroy others posts' do
+    user = FactoryGirl.create(:user, admin: false)
+    admin = FactoryGirl.create(:user, admin: true)
+    post = FactoryGirl.create(:post, user_id: user.id)
+    sign_in admin
+
+    delete :destroy, id: post.id
+
+    assert_response :success
+  end
+
+  test 'user cant destroy others posts' do
+    user = FactoryGirl.create(:user, admin: false)
+    user2 = FactoryGirl.create(:user, admin: false)
+    post = FactoryGirl.create(:post, user_id: user2.id)
+    sign_in user
+
+    delete :destroy, id: post.id
+
+    assert_response :unauthorized
+  end
+    
+  test 'user can destroy their own posts' do
+    user = FactoryGirl.create(:user, admin: false)
+    post = FactoryGirl.create(:post, user_id: user.id)
+    sign_in user
+
+    delete :destroy, id: post.id
+
+    assert_response :success
+  end
+
+
 end
