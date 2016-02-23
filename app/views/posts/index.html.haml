@@ -57,10 +57,10 @@
         %p= post.created_at.to_formatted_s(:long)
         - if post.user.present?
           %small= post.user.email
-      .col-sm-1.col-xs-12
-        %p= "#{post.votes_for.size} ranks of awesomesauce!"
-      .col-sm-1.col-xs-12
+      .col-sm-2.col-xs-12
         - if current_user.upvoted? post
-          =link_to "Awesomesauce!", unlike_post_path(post), method: :delete
+          =link_to "You think this is Awesomesauce!", unlike_post_path(post), method: :delete
         - else
-          =link_to "Awesomesauce?", like_post_path(post), method: :put
+          =link_to "Do you think this is Awesomesauce?", like_post_path(post), method: :put
+      .col-sm-2.col-xs-12
+        %p= "#{post.votes_for.size} ranks of awesomesauce!"
