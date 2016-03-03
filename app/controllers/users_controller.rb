@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :only_self_and_admin, except: :show
 
   def show
-    # will allow you to view anyone's profile for now 
+    # will allow you to view anyone's profile for now
     # some things are currently hidden in the view
     # maybe add a separate/modified view for a public profile and restrict the dashboard?
   end
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :post_notification, :comment_notification)
+      params.require(:user).permit(:name, :post_notification, :comment_notification, :github_handle)
     end
 
     def only_self_and_admin

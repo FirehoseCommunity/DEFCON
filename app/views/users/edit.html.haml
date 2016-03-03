@@ -7,6 +7,7 @@
   = simple_form_for selected_user do |f|
     .field
       = f.input :name, autofocus: true
+      = f.input :github_handle
       = f.input :post_notification, label: "Notify me about new posts"
       = f.input :comment_notification, label: "Notify me about new comments on my posts"
       = f.input :post_interaction_notification, label: "Notify me about new comments on posts I commented on"
