@@ -17,11 +17,15 @@
             %span.icon-bar
             %span.icon-bar
           = link_to 'Defcon', root_path, :class => 'navbar-brand'
+    
         / Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li
               = link_to 'View Posts', posts_path
+          %ul.nav.navbar-nav
+            %li
+              = link_to 'Write a Post', '#', :data => {:toggle => 'modal', :target => "#myModal"}
           %ul.nav.navbar-nav
             %li
               - if current_user && current_user.admin?
@@ -63,5 +67,21 @@
     / %hr
     = yield
     
+
+    / Modal
+#myModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+        %h4#myModalLabel.modal-title Write a new post
+      .modal-body
+        =simple_form_for (Post.new) do |f|
+          =f.input :title
+          =f.input :body, as: :pagedown, input_html: { preview: true, rows: 10 }
+          %br/
+          .modal-footer
+            %button.btn.btn-default{"data-dismiss" => "modal", :type => "button", class: 'pull-left'} Close
+            =f.submit 'Create', class: 'btn btn-primary pull-right'
     
     
