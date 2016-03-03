@@ -84,3 +84,11 @@ end
 gem 'sucker_punch'
 
 gem 'acts_as_votable', '~> 0.10.0'
+
+gem "github_api"
+
+gem 'omniauth'
+
+gem "figaro"
+
+gem 'omniauth-github', '~> 1.1', '>= 1.1.2'
