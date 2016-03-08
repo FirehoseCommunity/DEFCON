@@ -5,6 +5,7 @@
     = selected_user.email
   %hr
   %h4 Name:&nbsp&nbsp #{selected_user.name}
+  %h4 Github Handle:&nbsp&nbsp #{selected_user.github_handle}
   %h4 Member Since:&nbsp&nbsp #{selected_user.created_at.strftime("%B %d, %Y")}
   - if selected_user.admin?
     %h4 Admin
@@ -14,7 +15,7 @@
   %h4 Total Upvotes:&nbsp&nbsp
   %br
   - if current_user == selected_user || current_user.admin?
-    %h4 Current Email Notification Settings:&nbsp&nbsp 
+    %h4 Current Email Notification Settings:&nbsp&nbsp
     %ul
       - if selected_user.post_notification?
         %li Notify For New Posts

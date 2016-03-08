@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  has_many :posts
+  has_many :posts, dependent: :destroy 
   has_many :comments 
   validates :name, presence: { :message => "Name is required!" }
   scope :users_to_notify, -> { where(:post_notification => true)  }
