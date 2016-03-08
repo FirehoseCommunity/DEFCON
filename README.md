@@ -18,6 +18,7 @@ View the wireframes for this app [here](https://github.com/FirehoseCommunity/DEF
 * Natalie Holton
 * Victoria Brouard
 * Erica Roy
+* Aubrette Reid
 
 ## Developer notes
 
