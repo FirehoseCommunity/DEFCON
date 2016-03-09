@@ -14,6 +14,16 @@ class User < ActiveRecord::Base
   scope :users_to_notify, -> { where(:post_notification => true)  }
   acts_as_voter # Users can upvote posts.
 
+  
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.id).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+    end
+  end
+
   def can_edit?(p)
       return false if p.blank?
 
