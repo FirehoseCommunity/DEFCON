@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :only_self_and_admin, except: :show
 
   def show
+    @badge = Badge.new
     # will allow you to view anyone's profile for now
     # some things are currently hidden in the view
     # maybe add a separate/modified view for a public profile and restrict the dashboard?
