@@ -16,7 +16,9 @@ Defcon::Application.routes.draw do
   resources :comments, :only => [:destroy, :edit, :update]
   resources :users, :only => [:show, :edit, :update]
   namespace :admin do
-    resources :users
+    resources :users do
+      resources :badges, :only => [:create, :destroy]
+    end
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

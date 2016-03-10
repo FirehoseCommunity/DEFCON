@@ -28,7 +28,7 @@
     %br
     =link_to 'Update Info', edit_user_path(selected_user), :class => 'btn btn-primary btn-large'
   - if current_user.admin
-    = simple_form_for @badge, url: '#' do |f|
+    = simple_form_for @badge, url: admin_user_badges_path(@user) do |f|
       .field
         = f.input :badge
       .actions
