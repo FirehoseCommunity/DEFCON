@@ -1,5 +1,6 @@
 Defcon::Application.routes.draw do
-  devise_for :users, :skip => :registerable, :controllers => { :invitations => 'admin/users/invitations' } 
+  devise_for :users, :skip => :registerable, 
+  :controllers => { :omniauth_callbacks => "callbacks", :invitations => 'admin/users/invitations' } 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

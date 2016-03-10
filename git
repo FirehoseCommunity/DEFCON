@@ -1,0 +1,1 @@
+Add `github_api_`, `omniauth`, `omniauth-github` gems to Gemfile. Also include `figaro` gem to protect credentials with environmental variables.
