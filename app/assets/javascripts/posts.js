@@ -9,3 +9,12 @@ $(function() {
 $(document).ready(function () {
     $('#new_post').validate();
 });
+
+
+<script>
+  $(document).ready(function(){
+    $("#tooltip ex a").tooltip({
+        placement : 'right'
+    });
+});
+</script>
