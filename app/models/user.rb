@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
 
   has_many :posts, dependent: :destroy 
+  has_many :badges
   has_many :comments 
   validates :name, presence: { :message => "Name is required!" }
   scope :users_to_notify, -> { where(:post_notification => true)  }
