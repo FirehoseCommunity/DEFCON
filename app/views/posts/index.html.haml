@@ -51,10 +51,15 @@
     .row
       .col-sm-1.col-xs-12
         =link_to image_tag(post.user.gravatar_url(default: "retro", size: 50), alt: post.user.name, class: "gravatar pull-left"), user_path(post.user)
+
       .col-sm-9.col-xs-12
         %p= post.created_at.to_formatted_s(:long)
-        - if post.user.present?
-          %small= post.user.email
+
+        %div.userHandle{"data-placement": "right", "data-toggle": "tooltip", "title": "post.user.github_handle"}
+          - if post.user.present?
+            %small
+              = post.user.email
+
       .col-sm-2.col-xs-12
         - if current_user.upvoted? post
           =link_to "You think this is Awesomesauce!", unlike_post_path(post), method: :delete
