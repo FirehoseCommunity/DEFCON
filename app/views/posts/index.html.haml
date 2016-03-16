@@ -55,7 +55,7 @@
       .col-sm-9.col-xs-12
         %p= post.created_at.to_formatted_s(:long)
 
-        %a{"data-placement" => "right", "data-toggle" => "tooltip", :href => "#", :title => "user.github_handle"}
+        %div.userHandle{"data-placement": "right", "data-toggle": "tooltip", "title": "post.user.github_handle"}
           - if post.user.present?
             %small
               = post.user.email
