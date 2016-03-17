@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!
+  
 
   def index
     @posts = Post.all
@@ -35,6 +36,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path
+  
   end
 
   def upvote
