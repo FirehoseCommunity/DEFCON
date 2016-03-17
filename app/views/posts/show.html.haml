@@ -12,8 +12,11 @@
         Posted
         = time_ago_in_words(@post.created_at)
         ago
+    .btn-group
     - if current_user == @post.user
-      %li= link_to 'Edit Post', edit_post_path(@post), :class => 'btn btn-sm btn-primary pull-right'
+      = link_to 'Edit Post', edit_post_path(@post), :class => 'btn btn-sm btn-primary pull-right'
+      = link_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, :class =>'btn btn-sm btn-danger pull-right'
+      
   %hr
   .wmd-output><
     :preserve
